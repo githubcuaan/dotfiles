@@ -6,5 +6,7 @@ font-size = 14
 
 gtk-titlebar = false
 
+background-opacity = 0.95
+
 # custom-shader = /home/chris/bloom.glsl
 # custom-shader = /home/chris/crt.glsl
