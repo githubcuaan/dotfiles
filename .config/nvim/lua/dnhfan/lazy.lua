@@ -13,6 +13,8 @@ vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
   { import = "dnhfan.plugins" },
+  { import = "dnhfan.plugins.editing" },
+  { import = "dnhfan.plugins.ui" },
   { import = "dnhfan.plugins.lsp" },
   { import = "dnhfan.plugins.laravel" },
 }, {
