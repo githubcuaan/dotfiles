@@ -1,0 +1,203 @@
+*copilot.txt*  GitHub Copilot - Trợ lý lập trình AI của bạn
+
+BẮT ĐẦU                                           *copilot*
+
+Gọi lệnh `:Copilot setup` để xác thực và kích hoạt GitHub Copilot.
+
+Các gợi ý sẽ hiển thị trực tiếp và có thể chấp nhận bằng cách nhấn <Tab>. Nếu
+gợi ý trực tiếp không hoạt động, hãy gọi `:Copilot status` để xác minh Copilot
+đã được kích hoạt và không gặp vấn đề gì.
+
+LỆNH                                              *:Copilot*
+
+                                                  *:Copilot_disable*
+:Copilot disable        Tắt toàn cục các gợi ý trực tiếp của GitHub Copilot.
+
+                                                  *:Copilot_enable*
+:Copilot enable         Bật lại GitHub Copilot sau khi dùng :Copilot disable.
+
+                                                  *:Copilot_setup*
+:Copilot setup          Xác thực và kích hoạt GitHub Copilot.
+
+                                                  *:Copilot_signout*
+:Copilot signout        Đăng xuất khỏi GitHub Copilot.
+
+                                                  *:Copilot_status*
+:Copilot status         Kiểm tra xem GitHub Copilot có hoạt động cho buffer
+                        hiện tại và báo cáo các vấn đề nếu có.
+
+                                                  *:Copilot_panel*
+:Copilot panel          Mở cửa sổ với tối đa 10 gợi ý hoàn thành cho buffer
+                        hiện tại. Dùng <CR> để chấp nhận một gợi ý hoàn thành.
+                        Các phím tắt [[ và ]] cũng được cung cấp để nhảy giữa
+                        các gợi ý.
+
+                                                  *:Copilot_version*
+:Copilot version        Hiển thị thông tin phiên bản.
+
+                                                  *:Copilot_feedback*
+:Copilot feedback       Mở trang web để gửi phản hồi về GitHub Copilot.
+                        Hãy đảm bảo bao gồm kết quả |:Copilot_version| khi
+                        báo cáo lỗi.
+
+TÙY CHỌN                                          *copilot-options*
+
+                                                  *g:copilot_filetypes*
+g:copilot_filetypes     Từ điển ánh xạ các loại tệp với trạng thái kích hoạt
+                        của chúng. Hầu hết các loại tệp được kích hoạt mặc
+                        định, nên thường dùng để tắt.
+>
+                        let g:copilot_filetypes = {
+                              \ 'xml': v:false,
+                              \ }
+<
+                        Tắt tất cả loại tệp có thể được thực hiện bằng cách
+                        đặt khóa đặc biệt "*". Sau đó các loại tệp có thể được
+                        bật lại riêng lẻ.
+>
+                        let g:copilot_filetypes = {
+                              \ '*': v:false,
+                              \ 'python': v:true,
+                              \ }
+<
+                                                  *b:copilot_enabled*
+b:copilot_enabled       Đặt thành v:false để tắt GitHub Copilot cho buffer
+                        hiện tại. Hoặc đặt thành v:true để buộc kích hoạt,
+                        ghi đè g:copilot_filetypes.
+
+                                                  *g:copilot_node_command*
+g:copilot_node_command  Cho Copilot biết tệp nhị phân `node` nào để sử dụng
+                        với g:copilot_node_command. Điều này hữu ích nếu
+                        `node` trong PATH của bạn là phiên bản không được hỗ trợ.
+>
+                        let g:copilot_node_command =
+                              \ "~/.nodenv/versions/18.18.0/bin/node"
+<
+                                                  *g:copilot_enterprise_uri*
+g:copilot_enterprise_uri
+                        Nếu bạn đang sử dụng GitHub Copilot Enterprise, đặt
+                        giá trị này thành URI của instance GitHub Enterprise
+                        của bạn.
+>
+                        let g:copilot_enterprise_uri = 'https://DOMAIN.ghe.com'
+<
+                                                  *g:copilot_proxy*
+g:copilot_proxy         Cho Copilot biết máy chủ proxy nào để sử dụng.
+>
+                        let g:copilot_proxy = 'http://localhost:3128'
+<
+                        Nếu không được đặt, Copilot sẽ sử dụng giá trị của
+                        các biến môi trường như $HTTPS_PROXY.
+
+                                                  *g:copilot_proxy_strict_ssl*
+g:copilot_proxy_strict_ssl
+                        Các proxy công ty đôi khi sử dụng chứng chỉ SSL
+                        man-in-the-middle không tương thích với GitHub Copilot.
+                        Để khắc phục điều này, có thể tắt xác minh chứng chỉ SSL:
+>
+                        let g:copilot_proxy_strict_ssl = v:false
+<
+                        Bạn cũng có thể bảo Node.js tắt xác minh SSL bằng cách
+                        đặt biến môi trường $NODE_TLS_REJECT_UNAUTHORIZED
+                        thành "0".
+
+                                                  *g:copilot_workspace_folders*
+g:copilot_workspace_folders
+                        Danh sách các "workspace folders" hoặc thư mục gốc dự án
+                        mà Copilot có thể sử dụng để cải thiện chất lượng gợi ý.
+>
+                        let g:copilot_workspace_folders =
+                               \ ["~/Projects/myproject"]
+<
+                        Bạn cũng có thể đặt b:workspace_folder cho một buffer
+                        riêng lẻ và các giá trị mới được thấy sẽ được thêm
+                        tự động.
+
+PHÍM TẮT                                          *copilot-maps*
+
+                                                  *copilot-i_<Tab>*
+Copilot.vim sử dụng <Tab> để chấp nhận gợi ý hiện tại. Nếu bạn đã có ánh xạ
+<Tab> sẵn, nó sẽ được dùng làm phương án dự phòng khi không có gợi ý nào được
+hiển thị.
+
+                                                  *copilot#Accept()*
+Nếu bạn muốn dùng một phím khác thay vì <Tab>, hãy định nghĩa một ánh xạ <expr>
+gọi copilot#Accept(). Đây là ví dụ với CTRL-J:
+>
+        imap <silent><script><expr> <C-J> copilot#Accept("\<CR>")
+        let g:copilot_no_tab_map = v:true
+<
+Phiên bản Lua:
+>
+        vim.keymap.set('i', '<C-J>', 'copilot#Accept("\\<CR>")', {
+          expr = true,
+          replace_keycodes = false
+        })
+        vim.g.copilot_no_tab_map = true
+<
+Tham số của copilot#Accept() là phương án dự phòng khi không có gợi ý nào được
+hiển thị. Trong ví dụ này, một ký tự xuống dòng thông thường được sử dụng. Nếu
+không muốn phương án dự phòng, dùng tham số "" (chuỗi rỗng).
+
+Các Phím Tắt Khác ~
+
+Lưu ý rằng các ánh xạ M- (còn gọi là meta hoặc alt) phụ thuộc nhiều vào terminal
+của bạn để hoạt động đúng và có thể không được hỗ trợ trong cấu hình của bạn.
+Như một giải pháp thay thế, bạn có thể tạo phiên bản riêng của mình gọi các ánh
+xạ <Plug>. Đây là ví dụ ánh xạ CTRL-L để chấp nhận một từ của gợi ý hiện tại:
+>
+        imap <C-L> <Plug>(copilot-accept-word)
+<
+Phiên bản Lua:
+>
+        vim.keymap.set('i', '<C-L>', '<Plug>(copilot-accept-word)')
+<
+                                                  *copilot-i_CTRL-]*
+<C-]>                   Loại bỏ gợi ý hiện tại.
+<Plug>(copilot-dismiss)
+
+                                                  *copilot-i_ALT-]*
+<M-]>                   Chuyển sang gợi ý tiếp theo, nếu có.
+<Plug>(copilot-next)
+
+                                                  *copilot-i_ALT-[*
+<M-[>                   Chuyển sang gợi ý trước đó.
+<Plug>(copilot-previous)
+
+                                                  *copilot-i_ALT-\*
+<M-\>                   Yêu cầu gợi ý một cách rõ ràng, ngay cả khi Copilot
+<Plug>(copilot-suggest) bị tắt.
+
+                                                  *copilot-i_ALT-Right*
+<M-Right>               Chấp nhận từ tiếp theo của gợi ý hiện tại.
+<Plug>(copilot-accept-word)
+
+                                                  *copilot-i_ALT-CTRL-Right*
+
+<M-C-Right>             Chấp nhận dòng tiếp theo của gợi ý hiện tại.
+<Plug>(copilot-accept-line)
+
+LÀM NỔI BẬT CÚ PHÁP                               *copilot-highlighting*
+
+Các gợi ý trực tiếp được làm nổi bật bằng nhóm CopilotSuggestion, mặc định là
+màu xám trung bình. Nơi tốt nhất để ghi đè điều này là với autocommand
+|ColorScheme|:
+>
+        autocmd ColorScheme solarized
+              \ highlight CopilotSuggestion guifg=#555555 ctermfg=8
+<
+Phiên bản Lua:
+>
+        vim.api.nvim_create_autocmd('ColorScheme', {
+          pattern = 'solarized',
+          -- group = ...,
+          callback = function()
+            vim.api.nvim_set_hl(0, 'CopilotSuggestion', {
+              fg = '#555555',
+              ctermfg = 8,
+              force = true
+            })
+          end
+        })
+<
+ vim:tw=78:et:ft=help:norl:
