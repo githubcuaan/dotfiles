@@ -44,6 +44,8 @@ return {
         "black", -- python formatter
         "pylint",
         "eslint_d",
+        "blade-formatter",
+        "pretty-php",
       },
     },
     dependencies = {
