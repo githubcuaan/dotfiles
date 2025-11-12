@@ -9,19 +9,23 @@ return {
     "nvim-tree/nvim-web-devicons", -- optional, but recommended
   },
   lazy = false,
+  auto_clean_after_session_restore = false,
 
   config = function()
     -- 1. Keymaps
-    vim.keymap.set("n", "<leader>ee", ":Neotree toggle filesystem left<CR>", {})
-    vim.keymap.set("n", "<leader>bf", ":Neotree buffers reveal float<CR>", {})
+    vim.keymap.set(
+      "n",
+      "<leader>ee",
+      ":Neotree toggle filesystem left<CR>",
+      { desc = "Neotree: Đóng/Mở filesystem" }
+    )
+    vim.keymap.set("n", "<leader>bf", ":Neotree buffers reveal float<CR>", { desc = "Neotree: Xem các Buffer" })
 
     -- 2 config
     require("neo-tree").setup({
       close_if_last_window = true,
 
       -- === VỊ TRÍ & KÍCH THƯỚC ===
-      -- Đặt vị trí mặc định.
-      -- Keymap của bạn dùng 'left', nên chúng ta đặt mặc định là 'left'
       default_position = "left",
       window = {
         width = 36, -- Chiều rộng 40-character
