@@ -8,6 +8,7 @@ return {
     "MunifTanjim/nui.nvim",
     "nvim-tree/nvim-web-devicons", -- optional, but recommended
   },
+  lazy = false,
 
   config = function()
     -- 1. Keymaps
