@@ -140,3 +140,6 @@ eval "$(zoxide init zsh)"
 
 # ----- FZF setup -----
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# ----- Neovide ------
+ alias neovide='GDK_BACKEND=x11 neovide'
