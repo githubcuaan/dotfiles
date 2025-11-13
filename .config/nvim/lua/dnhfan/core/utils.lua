@@ -275,7 +275,6 @@ U.lsp_servers = {
   "tailwindcss", -- tailwindcss
   "emmet_ls", -- emmet
   "html", -- html
-  "solargraph@0.52.0", -- ruby
   "dockerls", -- docker
   "docker_compose_language_service", -- docker-compose
   "angularls@17.0.0", -- angular
