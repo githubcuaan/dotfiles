@@ -6,12 +6,12 @@ return {
   dependencies = {
     "nvim-lua/plenary.nvim",
     "MunifTanjim/nui.nvim",
-    "nvim-tree/nvim-web-devicons", -- optional, but recommended
+    "nvim-tree/nvim-web-devicons",
   },
   lazy = false,
 
   config = function()
-    -- 1. Keymaps
+    -- Keymaps
     vim.keymap.set(
       "n",
       "<leader>ee",
@@ -20,61 +20,82 @@ return {
     )
     vim.keymap.set("n", "<leader>bf", ":Neotree buffers reveal float<CR>", { desc = "Neotree: Xem các Buffer" })
 
-    -- 2 config
     require("neo-tree").setup({
       close_if_last_window = true,
-
-      -- VỊ TRÍ & KÍCH THƯỚC
       default_position = "left",
-      window = {
-        width = 36, -- Chiều rộng 40-character
-        mappings = {
-          -- Các phím tắt NỘI BỘ (chỉ dùng khi ở trong neo-tree)
-          ["l"] = "open", -- 'l' để mở file/folder
-          ["h"] = "close_node", -- 'h' để đóng folder
-          ["<cr>"] = "open", -- Enter cũng để mở
-          ["<space>"] = "toggle_node", -- Space để expand/collapse
-          ["q"] = "close_window", -- 'q' để đóng cửa sổ neo-tree
 
-          -- Các hành động quản lý file
-          ["a"] = "add", -- 'a' để thêm file/thư mục
+      window = {
+        width = 36,
+        mappings = {
+          ["l"] = "open",
+          ["h"] = "close_node",
+          ["<cr>"] = "open",
+          ["<space>"] = "toggle_node",
+          ["q"] = "close_window",
+          ["a"] = "add",
           ["d"] = "delete",
           ["r"] = "rename",
-          ["?"] = "show_help", -- '?' để xem trợ giúp
+          ["?"] = "show_help",
         },
       },
 
-      -- CẤU HÌNH FILE SYSTEM
+      default_component_configs = {
+        indent = {
+          indent_size = 2,
+          padding = 1,
+          with_markers = true,
+          indent_marker = "│",
+          last_indent_marker = "└",
+        },
+        icon = {
+          default = "",
+          symlink = "",
+          bookmark = "󰆤",
+          hidden = "󰜌",
+          folder_closed = "",
+          folder_empty = "",
+          folder_empty_open = "",
+          folder_open = "",
+          use_filtered_colors = true,
+        },
+        modified = {
+          symbol = require("dnhfan.core.utils").sign_icons.change,
+        },
+        git_status = {
+          symbols = {
+            unmerged = "",
+            added = require("dnhfan.core.utils").sign_icons.add,
+            modified = require("dnhfan.core.utils").sign_icons.change,
+            deleted = require("dnhfan.core.utils").sign_icons.delete,
+            renamed = require("dnhfan.core.utils").sign_icons.info,
+            untracked = require("dnhfan.core.utils").sign_icons.untracked,
+            ignored = require("dnhfan.core.utils").sign_icons.warning,
+            unstaged = require("dnhfan.core.utils").sign_icons.change,
+            staged = require("dnhfan.core.utils").sign_icons.success,
+            conflict = "",
+          },
+        },
+      },
+
       filesystem = {
-        -- Tự động focus vào file đang mở khi bạn chuyển buffer
         follow_current_file = {
           enabled = true,
         },
-        -- Lọc các file/thư mục không mong muốn
         filtered_items = {
-          -- Hiển thị các file/thư mục ẩn (bắt đầu bằng dấu .)
-          -- Rất quan trọng cho web dev để thấy .env, .gitignore, v.v.
           visible = true,
           hide_dotfiles = false,
-          hide_gitignored = true, -- Ẩn các file trong .gitignore
+          hide_gitignored = true,
           hide_by_name = {
             "node_modules",
             ".git",
           },
-          never_show = { -- Luôn luôn ẩn
+          never_show = {
             ".DS_Store",
             "thumbs.db",
           },
         },
       },
 
-      -- GIAO DIỆN (UI)
-      renderers = {
-        indent_markers = {
-          enable = true, -- Bật các đường kẻ lề
-        },
-      },
-      -- Bật tích hợp Git (hiển thị file đã M(odified), A(dded), D(eleted))
       git_status = {
         enable = true,
       },
