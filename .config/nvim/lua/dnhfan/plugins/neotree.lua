@@ -14,7 +14,7 @@ return {
     -- Keymaps
     vim.keymap.set(
       "n",
-      "<leader>ee",
+      "<leader>e",
       ":Neotree toggle filesystem left<CR>",
       { desc = "Neotree: Đóng/Mở filesystem" }
     )
