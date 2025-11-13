@@ -9,7 +9,6 @@ return {
     "nvim-tree/nvim-web-devicons", -- optional, but recommended
   },
   lazy = false,
-  auto_clean_after_session_restore = false,
 
   config = function()
     -- 1. Keymaps
@@ -25,7 +24,7 @@ return {
     require("neo-tree").setup({
       close_if_last_window = true,
 
-      -- === VỊ TRÍ & KÍCH THƯỚC ===
+      -- VỊ TRÍ & KÍCH THƯỚC
       default_position = "left",
       window = {
         width = 36, -- Chiều rộng 40-character
@@ -45,7 +44,7 @@ return {
         },
       },
 
-      -- === CẤU HÌNH FILE SYSTEM ===
+      -- CẤU HÌNH FILE SYSTEM
       filesystem = {
         -- Tự động focus vào file đang mở khi bạn chuyển buffer
         follow_current_file = {
@@ -69,7 +68,7 @@ return {
         },
       },
 
-      -- === GIAO DIỆN (UI) ===
+      -- GIAO DIỆN (UI)
       renderers = {
         indent_markers = {
           enable = true, -- Bật các đường kẻ lề
