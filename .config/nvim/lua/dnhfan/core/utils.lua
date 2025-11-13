@@ -281,6 +281,23 @@ U.lsp_servers = {
   "angularls@17.0.0", -- angular
   "eslint", -- eslint
   -- "vuels"
+  "svelte",
+  "graphql",
+  "prismals",
+  "pyright", -- python
+  "intelephense", -- php
+}
+
+--NOTE: lsp formatters
+U.lsp_formatters = {
+  "prettier", -- prettier formatter
+  "stylua", -- lua formatter
+  "isort", -- python formatter
+  "black", -- python formatter
+  "pylint",
+  "eslint_d",
+  "blade-formatter",
+  "pretty-php",
 }
 
 -- NOTE: Treesitter parser list
@@ -290,23 +307,29 @@ U.treesitter_parsers = {
   "diff",
   "typescript",
   "json",
-  "ruby",
   "html",
   "css",
   "scss",
   "angular",
   "bash",
   "dockerfile",
-  "gitignore",
   "regex",
-  "tsx",
-  "vim",
   "vimdoc",
   "vue",
   "xml",
   "yaml",
+  "tsx",
+  "prisma",
   "markdown",
   "markdown_inline",
+  "svelte",
+  "graphql",
+  "bash",
+  "vim",
+  "gitignore",
+  "query",
+  "c",
+  "php",
 }
 
 U.spinner_frames = { "⣾", "⣽", "⣻", "⢿", "⡿", "⣟", "⣯", "⣷" }
