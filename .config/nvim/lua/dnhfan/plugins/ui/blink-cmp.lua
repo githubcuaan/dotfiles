@@ -55,8 +55,8 @@ return {
       keymap = {
         preset = "none",
         ["<CR>"] = { "select_and_accept", "fallback" },
-        ["<C-n>"] = { "select_next", "fallback" },
-        ["<C-p>"] = { "select_prev", "fallback" },
+        ["<C-j>"] = { "select_next", "fallback" },
+        ["<C-k>"] = { "select_prev", "fallback" },
         ["<C-space>"] = { "show", "show_documentation", "hide_documentation" },
         ["<C-e>"] = { "hide" },
         ["<C-d>"] = { "scroll_documentation_down" },
