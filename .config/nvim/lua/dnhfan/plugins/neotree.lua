@@ -66,7 +66,7 @@ return {
             unmerged = "",
             added = require("dnhfan.core.utils").sign_icons.add,
             modified = require("dnhfan.core.utils").sign_icons.change,
-            deleted = require("dnhfan.core.utils").sign_icons.delete,
+            deleted = require("dnhfan.core.utils").sign_icons.topdelete,
             renamed = require("dnhfan.core.utils").sign_icons.info,
             untracked = require("dnhfan.core.utils").sign_icons.untracked,
             ignored = require("dnhfan.core.utils").sign_icons.warning,
