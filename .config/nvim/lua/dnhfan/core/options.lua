@@ -7,6 +7,15 @@ vim.o.autoread = true -- automatically read file when changed outside of nvim
 
 local opt = vim.opt
 
+-- Bật chế độ xuống dòng mềm (chỉ hiển thị xuống dòng, không thêm ký tự enter thật)
+opt.wrap = true
+
+-- Ngắt dòng theo từ (để không bị chặt đôi chữ cái khi xuống dòng)
+opt.linebreak = true
+
+-- Giữ thụt đầu dòng cho đẹp (nhìn code đỡ rối mắt)
+opt.breakindent = true
+
 opt.relativenumber = true
 opt.number = true
 
