@@ -54,6 +54,10 @@ return {
       end,
       keymap = {
         preset = "none",
+
+        ["<Tab>"] = { "snippet_forward", "fallback" },
+        ["<S-Tab>"] = { "snippet_backward", "fallback" },
+
         ["<CR>"] = { "select_and_accept", "fallback" },
         ["<C-j>"] = { "select_next", "fallback" },
         ["<C-k>"] = { "select_prev", "fallback" },
@@ -172,6 +176,10 @@ return {
         enabled = true,
         keymap = {
           preset = "none",
+
+          ["<Tab>"] = { "snippet_forward", "fallback" },
+          ["<S-Tab>"] = { "snippet_backward", "fallback" },
+
           ["<CR>"] = { "select_and_accept", "fallback" },
           ["<C-j>"] = { "select_next", "fallback" },
           ["<C-k>"] = { "select_prev", "fallback" },
