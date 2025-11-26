@@ -118,7 +118,7 @@ return {
             icon = {
               " :",
               color = {
-                fg = vim.opt.background._value == "light" and require("dnhfan.core.utils").light_palette.red
+                fg = vim.opt.background == "light" and require("dnhfan.core.utils").light_palette.red
                   or require("dnhfan.core.utils").dark_palette.red, -- default to red if terminal color is not set
                 bg = nil, -- no background color
               },
