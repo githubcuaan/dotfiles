@@ -277,7 +277,7 @@ U.lsp_servers = {
   "html", -- html
   "dockerls", -- docker
   "docker_compose_language_service", -- docker-compose
-  "angularls@17.0.0", -- angular
+  "angularls", -- angular
   "eslint", -- eslint
   -- "vuels"
   "svelte",
