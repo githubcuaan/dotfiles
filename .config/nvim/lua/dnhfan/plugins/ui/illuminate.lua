@@ -1,3 +1,5 @@
+-- illuminate: Plugin để làm nổi bật các từ giống nhau trong tệp hiện tại
+
 return {
   "RRethy/vim-illuminate",
   event = { "BufReadPost", "BufNewFile" },
