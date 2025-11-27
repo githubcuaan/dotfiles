@@ -18,9 +18,11 @@ return {
           require("luasnip").config.set_config(opts)
           require("luasnip.loaders.from_vscode").lazy_load({ exclude = vim.g.vscode_snippets_exclude or {} })
           require("luasnip.loaders.from_vscode").lazy_load({ paths = vim.g.vscode_snippets_path or "" })
+
           -- snipmate format
           require("luasnip.loaders.from_snipmate").load()
           require("luasnip.loaders.from_snipmate").lazy_load({ paths = vim.g.snipmate_snippets_path or "" })
+
           -- lua format
           require("luasnip.loaders.from_lua").load()
           require("luasnip.loaders.from_lua").lazy_load({ paths = vim.g.lua_snippets_path or "" })
@@ -58,7 +60,7 @@ return {
         ["<Tab>"] = { "snippet_forward", "fallback" },
         ["<S-Tab>"] = { "snippet_backward", "fallback" },
 
-        ["<CR>"] = { "select_and_accept", "fallback" },
+        ["<C-y>"] = { "select_and_accept", "fallback" },
         ["<C-j>"] = { "select_next", "fallback" },
         ["<C-k>"] = { "select_prev", "fallback" },
         ["<C-space>"] = { "show", "show_documentation", "hide_documentation" },
@@ -180,7 +182,7 @@ return {
           ["<Tab>"] = { "snippet_forward", "fallback" },
           ["<S-Tab>"] = { "snippet_backward", "fallback" },
 
-          ["<CR>"] = { "select_and_accept", "fallback" },
+          ["<C-y>"] = { "select_and_accept", "fallback" },
           ["<C-j>"] = { "select_next", "fallback" },
           ["<C-k>"] = { "select_prev", "fallback" },
           ["<C-space>"] = { "show", "show_documentation", "hide_documentation" },
