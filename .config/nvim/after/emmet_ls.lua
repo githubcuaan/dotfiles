@@ -11,5 +11,6 @@ return {
     "php",
     "js",
     "ts",
+    "blade",
   },
 }
