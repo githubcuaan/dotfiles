@@ -1,6 +1,7 @@
 {
     "diagnostics.globals": [
-        "Laravel"
+        "Laravel",
+        "vim"
     ],
     "diagnostics.disable": [
         "undefined-field"
