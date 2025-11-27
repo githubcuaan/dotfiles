@@ -1,11 +1,5 @@
 return {
   {
-    "saghen/blink.compat",
-    version = "*",
-    lazy = true,
-    opts = {},
-  },
-  {
     "saghen/blink.cmp",
     event = { "InsertEnter", "CmdlineEnter" },
     dependencies = {
@@ -14,6 +8,7 @@ return {
         dependencies = { "rafamadriz/friendly-snippets" },
         event = "InsertEnter",
         opts = { updateevents = "TextChanged,TextChangedI" },
+
         config = function(_, opts)
           require("luasnip").config.set_config(opts)
           require("luasnip.loaders.from_vscode").lazy_load({ exclude = vim.g.vscode_snippets_exclude or {} })
@@ -80,7 +75,7 @@ return {
           show_on_trigger_character = true,
           show_on_insert_on_trigger_character = true,
           show_on_accept_on_trigger_character = true,
-          show_on_x_blocked_trigger_characters = { "'", '"', "(" },
+          blocked_trigger_characters = { "'", '"', "(", ">" },
         },
         accept = {
           create_undo_point = true,
