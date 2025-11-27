@@ -1,6 +1,17 @@
 return {
   "nanozuki/tabby.nvim",
   config = function()
+    -- 0. PHÍM TẮT
+    -- Loop từ 1 đến 9, map <Leader> + số để nhảy tab
+    for i = 1, 9 do
+      vim.keymap.set("n", "<leader>t" .. i, function()
+        vim.cmd("tabnext " .. i)
+      end, { desc = "Tabby: Nhảy ngay tới tab " .. i })
+    end
+
+    -- Bonus: Map thêm phím 0 để nhảy về tab cuối cùng (thường là tab mới nhất)
+    vim.keymap.set("n", "<leader>t0", ":tablast<CR>", { desc = "Tabby: Nhảy tới tab cuối cùng" })
+
     -- 1. ĐỊNH NGHĨA THEME (TÁCH BIỆT)
     local theme = {
       fill = "TabLineFill",
@@ -28,7 +39,7 @@ return {
               line.sep("", hl, theme.fill),
               tab.is_current() and "" or "󰆣", -- Icon cho Active/Inactive Tab
               tab.number(),
-              tab.name(),
+              -- tab.name(),
               tab.close_btn(""),
               line.sep("", hl, theme.fill),
               hl = hl,
