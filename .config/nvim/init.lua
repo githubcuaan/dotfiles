@@ -10,7 +10,8 @@ require("dnhfan.core").setup({
   float_window_brightness = 40,
   better_cmp_cursor_line = true,
   line_space = 0,
-  colorscheme = "catppuccin.mocha",
+  -- colorscheme = "catppuccin.mocha",
+  colorscheme = "nord",
 })
 require("dnhfan.lsp")
 require("dnhfan.lazy")
