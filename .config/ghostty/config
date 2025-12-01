@@ -1,5 +1,9 @@
-theme = catppuccin-mocha
+# theme = catppuccin-mocha
 #theme = catppuccin-frappe
+
+# theme = tokyo-night-default
+
+theme = nord
 
 # font-family = CaskaydiaCove Nerd Font
 font-size = 14
@@ -7,6 +11,9 @@ font-size = 14
 gtk-titlebar = false
 
 background-opacity = 0.95
+
+# Bỏ khoảng trống trên và dưới
+window-padding-y = 0
 
 # custom-shader = /home/chris/bloom.glsl
 # custom-shader = /home/chris/crt.glsl
