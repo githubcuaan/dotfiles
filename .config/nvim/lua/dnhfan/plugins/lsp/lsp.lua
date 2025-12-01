@@ -55,6 +55,16 @@ return {
             },
           })
         end,
+
+        -- Custom handler for eslint
+        ["eslint"] = function()
+          lspconfig.eslint.setup({
+            capabilities = capabilities,
+            settings = {
+              format = { enable = true },
+            },
+          })
+        end,
       },
     })
   end,
