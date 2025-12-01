@@ -143,3 +143,12 @@ eval "$(zoxide init zsh)"
 
 # ----- Neovide ------
  alias neovide='GDK_BACKEND=x11 neovide'
+
+# bun completions
+[ -s "/home/dnhfan/.bun/_bun" ] && source "/home/dnhfan/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
+
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
