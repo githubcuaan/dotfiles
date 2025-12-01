@@ -1,6 +1,8 @@
 return {
   "nanozuki/tabby.nvim",
   config = function()
+    vim.o.showtabline = 2
+
     -- 0. PHÍM TẮT
     -- Loop từ 1 đến 9, map <Leader> + số để nhảy tab
     for i = 1, 9 do
@@ -39,7 +41,7 @@ return {
               line.sep("", hl, theme.fill),
               tab.is_current() and "" or "󰆣", -- Icon cho Active/Inactive Tab
               tab.number(),
-              -- tab.name(),
+              tab.name(),
               tab.close_btn(""),
               line.sep("", hl, theme.fill),
               hl = hl,
