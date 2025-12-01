@@ -11,7 +11,7 @@ return {
   lazy = false,
 
   config = function()
-    -- Keymaps
+    -- 1. Keymaps outside setup
     vim.keymap.set(
       "n",
       "<leader>e",
@@ -24,6 +24,7 @@ return {
       close_if_last_window = true,
       default_position = "left",
 
+      -- 2. Mappings inside neotree window
       window = {
         width = 36,
         mappings = {
@@ -39,7 +40,9 @@ return {
         },
       },
 
+      -- 3. Components
       default_component_configs = {
+
         indent = {
           indent_size = 2,
           padding = 1,
@@ -47,6 +50,7 @@ return {
           indent_marker = "│",
           last_indent_marker = "└",
         },
+
         icon = {
           default = "",
           symlink = "",
@@ -58,9 +62,11 @@ return {
           folder_open = "",
           use_filtered_colors = true,
         },
+
         modified = {
           symbol = require("dnhfan.core.utils").sign_icons.change,
         },
+
         git_status = {
           symbols = {
             unmerged = "",
@@ -77,6 +83,7 @@ return {
         },
       },
 
+      -- 4. Filesystem
       filesystem = {
         follow_current_file = {
           enabled = true,
@@ -100,5 +107,11 @@ return {
         enable = true,
       },
     })
+
+    -- === PHẦN CUSTOM MÀU NỀN Ở ĐÂY ===
+    -- Nord đang dùng là #2E3440, thì mình cho sidebar tối đi chút (#242933)
+    vim.api.nvim_set_hl(0, "NeoTreeNormal", { bg = "#242933" })
+    vim.api.nvim_set_hl(0, "NeoTreeNormalNC", { bg = "#242933" }) -- Lúc không focus cũng màu đó luôn
+    vim.api.nvim_set_hl(0, "NeoTreeEndOfBuffer", { bg = "#242933", fg = "#242933" }) -- Xóa mấy dấu ~ ở cuối
   end,
 }
