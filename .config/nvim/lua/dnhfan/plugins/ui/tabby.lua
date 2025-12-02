@@ -74,5 +74,9 @@ return {
         }
       end,
     })
+    if vim.g.colors_name == "nord" then
+      -- Sử dụng màu Nord1 (#3B4252) để tạo độ sâu, tách biệt với nền editor (#2E3440)
+      vim.api.nvim_set_hl(0, "TabLineFill", { bg = "#242933" })
+    end
   end,
 }

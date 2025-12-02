@@ -108,10 +108,12 @@ return {
       },
     })
 
-    -- === PHẦN CUSTOM MÀU NỀN Ở ĐÂY ===
-    -- Nord đang dùng là #2E3440, thì mình cho sidebar tối đi chút (#242933)
-    vim.api.nvim_set_hl(0, "NeoTreeNormal", { bg = "#242933" })
-    vim.api.nvim_set_hl(0, "NeoTreeNormalNC", { bg = "#242933" }) -- Lúc không focus cũng màu đó luôn
-    vim.api.nvim_set_hl(0, "NeoTreeEndOfBuffer", { bg = "#242933", fg = "#242933" }) -- Xóa mấy dấu ~ ở cuối
+    if vim.g.colors_name == "nord" then
+      -- === PHẦN CUSTOM MÀU NỀN Ở ĐÂY ===
+      -- Nord đang dùng là #2E3440, thì mình cho sidebar tối đi chút (#242933)
+      vim.api.nvim_set_hl(0, "NeoTreeNormal", { bg = "#242933" })
+      vim.api.nvim_set_hl(0, "NeoTreeNormalNC", { bg = "#242933" }) -- Lúc không focus cũng màu đó luôn
+      vim.api.nvim_set_hl(0, "NeoTreeEndOfBuffer", { bg = "#242933", fg = "#242933" }) -- Xóa mấy dấu ~ ở cuối
+    end
   end,
 }
