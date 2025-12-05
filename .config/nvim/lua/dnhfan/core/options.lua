@@ -7,6 +7,10 @@ vim.o.autoread = true -- automatically read file when changed outside of nvim
 
 local opt = vim.opt
 
+-- Code folding using treesitter
+-- opt.foldmethod = "expr"
+-- opt.foldexpr = "nvim_treesitter#foldexpr()"
+
 -- Bật chế độ xuống dòng mềm (chỉ hiển thị xuống dòng, không thêm ký tự enter thật)
 opt.wrap = true
 
