@@ -65,6 +65,31 @@ return {
             },
           })
         end,
+
+        -- Custom handler for basedpyright
+        ["basedpyright"] = function()
+          lspconfig.basedpyright.setup({
+            capabilities = capabilities,
+
+            -- 1. Tắt UI (Hover & Signature)
+            -- on_attach = function(client, bufnr)
+            --   client.server_capabilities.hoverProvider = false
+            --   client.server_capabilities.signatureHelpProvider = false
+            -- end,
+
+            -- 2. [PHẦN QUAN TRỌNG] Đừng xóa cái này, xóa là nó bớt khôn đấy
+            settings = {
+              basedpyright = {
+                analysis = {
+                  autoSearchPaths = true,
+                  diagnosticMode = "openFilesOnly",
+                  useLibraryCodeForTypes = true,
+                  typeCheckingMode = "standard", -- Hoặc 'basic' tùy bác
+                },
+              },
+            },
+          })
+        end,
       },
     })
   end,
