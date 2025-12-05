@@ -268,7 +268,7 @@ U.kind_icons = {
 
 -- NOTE: Lsp server list
 U.lsp_servers = {
-  "ts_ls", -- typescript
+  -- "ts_ls", -- typescript
   "lua_ls", -- lua
   "cssls", -- css
   "jsonls", -- json
@@ -283,7 +283,8 @@ U.lsp_servers = {
   "svelte",
   "graphql",
   "prismals",
-  "pyright", -- python
+  -- "pyright", -- python
+  "basedpyright", -- python
   "intelephense", -- php
 }
 
@@ -297,6 +298,7 @@ U.lsp_formatters = {
   "eslint_d",
   "blade-formatter",
   "pretty-php",
+  -- "ruff",
 }
 
 -- NOTE: Treesitter parser list
