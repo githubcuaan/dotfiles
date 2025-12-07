@@ -6,6 +6,17 @@ return {
     build = ":TSUpdate",
 
     config = function()
+      local parser_config = require("nvim-treesitter.parsers").get_parser_configs()
+      parser_config.embedded_template = {
+        install_info = {
+          url = "https://github.com/tree-sitter/tree-sitter-embedded-template",
+          files = { "src/parser.c" },
+          branch = "main",
+          generate_requires_npm = false,
+          requires_generate_from_grammar = false,
+        },
+        filetype = "ejs",
+      }
       -- import nvim-treesitter plugin
       local treesitter = require("nvim-treesitter.configs")
 
@@ -38,6 +49,10 @@ return {
         },
       })
 
+      vim.filetype.add({ extension = { ejs = "ejs" } })
+      vim.treesitter.language.register("embedded_template", "ejs")
+      vim.treesitter.language.register("html", "ejs")
+      -- vim.treesitter.language.register("javascript", "ejs")
       -- use bash parser for zsh files
       vim.treesitter.language.register("bash", "zsh")
     end,
