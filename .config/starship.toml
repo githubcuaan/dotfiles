@@ -1,0 +1,140 @@
+# ~/.config/starship.toml
+
+# add_newline = false
+
+# command_timeout = 500
+# command_timeout = 2000
+
+format = """
+[ ](bg:nord_blue)\
+$os\
+$username\
+[](bg:nord_light_blue fg:nord_blue)\
+$directory\
+[](fg:nord_light_blue bg:nord_grey)\
+$git_branch\
+$git_status\
+[](fg:nord_grey bg:nord_dark_grey)\
+$c\
+$cpp\
+$elixir\
+$elm\
+$golang\
+$gradle\
+$haskell\
+$java\
+$julia\
+$nodejs\
+$nim\
+$rust\
+$scala\
+$php\
+$python\
+$bun\
+[](fg:nord_dark_grey)\
+$docker_context\
+$line_break\
+$character"""
+
+palette = "nord"
+
+[palettes.nord]
+nord_dark = "#2E3440"
+nord_grey = "#3B4252" # nord1
+nord_dark_grey = "#434C5E" # nord2
+nord_light_blue = "#88C0D0" # nord8
+nord_blue = "#81A1C1" # nord9
+nord_dark_blue = "#5E81AC" # nord10
+nord_red = "#BF616A" # nord11
+nord_green = "#A3BE8C" # nord14
+nord_white = "#D8DEE9" # nord4
+nord_yellow = "#EBCB8B" # nord13 
+
+[os]
+disabled = false
+style = "bg:nord_blue fg:nord_dark"
+format = '[$symbol ]($style)'
+
+[os.symbols]
+Windows = "󰍲"
+Ubuntu = ""
+Macos = ""
+Linux = ""
+
+[username]
+show_always = true
+style_user = "bold bg:nord_blue fg:nord_dark"
+style_root = "bold bg:nord_blue fg:nord_red"
+format = '[ $user ]($style)'
+
+[directory]
+style = "bg:nord_light_blue fg:nord_grey"
+format = "[ $path ]($style)"
+truncation_length = 3
+truncation_symbol = "…/"
+
+[git_branch]
+symbol = ""
+style = "bg:nord_grey"
+format = '[[ $symbol $branch ](fg:nord_blue bg:nord_grey)]($style)'
+
+[git_status]
+style = "bg:nord_grey"
+format = '[[($all_status$ahead_behind )](fg:nord_white bg:nord_grey)]($style)'
+
+[nodejs]
+symbol = ""
+style = "bg:nord_dark_grey"
+format = '[[ $symbol ($version) ](fg:nord_green bg:nord_dark_grey)]($style)'
+
+[php]
+symbol = ""
+style = "bg:nord_dark_grey"
+format = '[[ $symbol ($version) ](fg:nord_blue bg:nord_dark_grey)]($style)'
+
+[golang]
+symbol = ""
+style = "bg:nord_dark_grey"
+format = '[[ $symbol ($version) ](fg:nord_blue bg:nord_dark_grey)]($style)'
+
+[java]
+symbol = ""
+style = "bg:nord_dark_grey"
+format = '[[ $symbol ($version) ](fg:nord_red bg:nord_dark_grey)]($style)'
+
+[docker_context]
+symbol = ""
+style = "bg:nord_dark"
+format = '[[ $symbol $context ](fg:#83a598 bg:color_bg3)]($style) $path'
+
+# Cấu hình C/C++ (Dùng chung module c)
+[c]
+symbol = ""
+detect_extensions = ["c", "cpp", "h", "hpp"]
+style = "bg:nord_dark_grey"
+format = '[[ $symbol ($version) ](fg:nord_blue bg:nord_dark_grey)]($style)'
+
+# Cấu hình Python (Màu vàng cho nổi)
+[python]
+symbol = ""
+style = "bg:nord_dark_grey"
+format = '[[ $symbol ($version) ](fg:nord_yellow bg:nord_dark_grey)]($style)'
+
+# Cấu hình Bun
+[bun]
+symbol = ""
+style = "bg:nord_dark_grey"
+format = '[[ $symbol ($version) ](fg:nord_white bg:nord_dark_grey)]($style)'
+
+[character]
+# classic
+# success_symbol = "[ ➜](bold nord_green)"
+# error_symbol = "[ ➜](bold nord_red)"
+
+# emoj
+success_symbol = "[󱚣 ➜](bold nord_green)" # Mặt cười 󱜙 󰚩 󱚣 󱜚 󱜚
+error_symbol = "[󱚟 ➜](bold nord_red)"     # Cảnh báo 󱚠 󱚞
+
+# snow
+# success_symbol = "[󰜗](bold nord_green)" # 󰜗 󱩰 
+# error_symbol = "[󰼩](bold nord_red)"     # 󰼩 󱓣 
