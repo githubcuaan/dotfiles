@@ -13,6 +13,16 @@ config.enable_tab_bar = false
 config.window_decorations = "RESIZE"
 -- config.window_background_opacity = 0.9
 
+config.window_padding = {
+	left = 3,
+	right = 0,
+	top = 7,
+	bottom = 0,
+}
+
+-- Tắt cảnh báo thiếu glyph (Fix cái lỗi 10eeee khó chịu)
+config.warn_about_missing_glyphs = false
+
 -- Font + color_scheme
 config.font_size = 14
 config.font = wezterm.font("FiraMono Nerd Font")
