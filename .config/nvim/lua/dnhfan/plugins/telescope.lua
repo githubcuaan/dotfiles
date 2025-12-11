@@ -22,6 +22,12 @@ return {
       local trouble_telescope = require("trouble.sources.telescope")
 
       telescope.setup({
+        pickers = {
+          find_files = {
+            hidden = true, -- hiển thị file ẩn
+          },
+        },
+
         defaults = {
           path_display = { "smart" },
           mappings = {
