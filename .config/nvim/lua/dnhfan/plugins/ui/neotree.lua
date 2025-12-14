@@ -12,12 +12,10 @@ return {
 
   config = function()
     -- 1. Keymaps outside setup
-    vim.keymap.set(
-      "n",
-      "<leader>e",
-      ":Neotree toggle filesystem left<CR>",
-      { desc = "Neotree: Đóng/Mở filesystem" }
-    )
+    vim.keymap.set("n", "<leader>e", ":Neotree toggle filesystem left<CR>", {
+      desc = "Neotree: Đóng/Mở filesystem",
+      silent = true,
+    })
     vim.keymap.set("n", "<leader>bf", ":Neotree buffers reveal float<CR>", { desc = "Neotree: Xem các Buffer" })
 
     require("neo-tree").setup({

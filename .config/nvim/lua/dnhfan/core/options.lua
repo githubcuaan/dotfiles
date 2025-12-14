@@ -38,8 +38,6 @@ vim.api.nvim_create_autocmd("FileType", {
   end,
 })
 
-opt.wrap = false
-
 -- search settings
 opt.ignorecase = true -- ignore case when searching
 opt.smartcase = true -- if you include mixed case in your search, assumes you want case-sensitive
