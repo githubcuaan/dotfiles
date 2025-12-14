@@ -15,6 +15,9 @@ return {
         ["vim.lsp.util.stylize_markdown"] = true,
         ["cmp.entry.get_documentation"] = true,
       },
+      signature = {
+        enabled = false, -- Tắt hiển thị signature help của noice (nếu thích)
+      },
     },
     presets = {
       bottom_search = true, -- Giữ thanh search (/) ở dưới (nếu thích)
