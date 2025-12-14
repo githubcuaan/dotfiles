@@ -25,11 +25,18 @@ return {
         pickers = {
           find_files = {
             hidden = true, -- hiển thị file ẩn
+            find_command = { "rg", "--files", "--hidden", "--glob", "!**/.git/*" },
+          },
+          live_grep = {
+            additional_args = function()
+              return { "--hidden", "--glob", "!**/.git/*" }
+            end,
           },
         },
 
         defaults = {
           path_display = { "smart" },
+          file_ignore_patterns = { "^.git/" },
           mappings = {
             i = {
               ["<C-k>"] = actions.move_selection_previous,
