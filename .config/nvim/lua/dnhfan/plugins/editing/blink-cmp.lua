@@ -75,7 +75,6 @@ return {
           show_on_trigger_character = true,
           show_on_insert_on_trigger_character = true,
           show_on_accept_on_trigger_character = true,
-          blocked_trigger_characters = { "'", '"', "(", ">" },
         },
         accept = {
           create_undo_point = true,
