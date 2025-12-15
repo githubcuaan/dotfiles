@@ -286,6 +286,7 @@ U.lsp_servers = {
   -- "pyright", -- python
   "basedpyright", -- python
   "intelephense", -- php
+  "clangd", -- c/c++
 }
 
 --NOTE: lsp formatters
