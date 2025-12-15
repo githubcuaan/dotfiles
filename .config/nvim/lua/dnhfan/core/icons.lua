@@ -1126,6 +1126,18 @@ return {
     icon = "󰈬",
     name = "Doc",
   },
+  ["docker-compose.dev.yaml"] = {
+    color = "#458ee6",
+    cterm_color = "68",
+    icon = "󰡨",
+    name = "Dockerfile",
+  },
+  ["docker-compose.dev.yml"] = {
+    color = "#458ee6",
+    cterm_color = "68",
+    icon = "󰡨",
+    name = "Dockerfile",
+  },
   ["docker-compose.yaml"] = {
     color = "#458ee6",
     cterm_color = "68",
@@ -1133,6 +1145,18 @@ return {
     name = "Dockerfile",
   },
   ["docker-compose.yml"] = {
+    color = "#458ee6",
+    cterm_color = "68",
+    icon = "󰡨",
+    name = "Dockerfile",
+  },
+  ["dockerfile.backend.dev"] = {
+    color = "#458ee6",
+    cterm_color = "68",
+    icon = "󰡨",
+    name = "Dockerfile",
+  },
+  ["dockerfile.backend"] = {
     color = "#458ee6",
     cterm_color = "68",
     icon = "󰡨",
