@@ -118,7 +118,7 @@ format = '[[ $symbol ($version) ](fg:nord_blue bg:nord_dark_grey)]($style)'
 [python]
 symbol = ""
 style = "bg:nord_dark_grey"
-format = '[[ $symbol ($version) ](fg:nord_yellow bg:nord_dark_grey)]($style)'
+format = '[[ $symbol ($version) ($virtualenv) ](fg:nord_yellow bg:nord_dark_grey)]($style)'
 
 # Cấu hình Bun
 [bun]
