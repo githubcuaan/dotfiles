@@ -287,6 +287,7 @@ U.lsp_servers = {
   "basedpyright", -- python
   "intelephense", -- php
   "clangd", -- c/c++
+  "yamlls", -- yaml
 }
 
 --NOTE: lsp formatters
