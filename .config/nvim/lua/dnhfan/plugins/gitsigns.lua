@@ -5,6 +5,16 @@ return {
   event = { "BufReadPre", "BufNewFile" },
 
   opts = {
+    preview_config = {
+      -- Các loại border: 'single', 'double', 'rounded', 'solid', 'shadow', 'none'
+      border = "rounded",
+
+      -- Các tùy chỉnh khác nếu thích
+      style = "minimal",
+      relative = "cursor",
+      row = 0,
+      col = 1,
+    },
 
     on_attach = function(bufnr)
       local gs = package.loaded.gitsigns
