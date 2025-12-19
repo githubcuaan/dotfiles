@@ -283,8 +283,8 @@ U.lsp_servers = {
   "svelte",
   "graphql",
   "prismals",
-  -- "pyright", -- python
-  "basedpyright", -- python
+  "pyright", -- python
+  -- "basedpyright", -- python
   "intelephense", -- php
   "clangd", -- c/c++
   "yamlls", -- yaml
