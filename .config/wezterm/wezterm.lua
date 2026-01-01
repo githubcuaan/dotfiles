@@ -10,7 +10,7 @@ config.initial_rows = 28
 
 -- Window conf
 config.enable_tab_bar = false
-config.window_decorations = "RESIZE"
+config.window_decorations = "NONE"
 -- config.window_background_opacity = 0.9
 
 config.window_padding = {
@@ -27,6 +27,8 @@ config.warn_about_missing_glyphs = false
 config.font_size = 14
 config.font = wezterm.font("FiraMono Nerd Font")
 config.color_scheme = "nordfox"
+
+config.enable_wayland = false -- Ubuntu 22.04 hay lỗi vặt với Wayland, về X11 cho lành
 
 -- Finally, return the configuration to wezterm:
 return config
