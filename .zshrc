@@ -43,14 +43,14 @@ fi
 # alias
 # ========================
 
-alias vim='nvim'
+alias v='nvim'
 
 # moving alias
 alias ..='cd ..'         # Lên thư mục cha
 alias ...='cd ../..'     # Lên 2 thư mục cha
 alias ll='ls -alF'       # Xem danh sách chi tiết (ẩn, thư mục, có dấu /)
 
-alias cls='clear'
+alias cl='clear'
 
 # ========================
 #     Global env var
@@ -111,3 +111,7 @@ export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
+
+. "$HOME/.atuin/bin/env"
+
+eval "$(atuin init zsh)"
