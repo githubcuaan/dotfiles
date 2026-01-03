@@ -19,7 +19,7 @@ return {
       fill = "TabLineFill",
       head = "TabLine",
       current_tab = "TabLineSel", -- Màu cho tab đang active
-      tab = "TabLine", -- Màu cho các tab inactive
+      tab = "TabLine",            -- Màu cho các tab inactive
       win = "TabLine",
       tail = "TabLine",
     }

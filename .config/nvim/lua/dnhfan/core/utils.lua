@@ -269,33 +269,33 @@ U.kind_icons = {
 -- NOTE: Lsp server list
 U.lsp_servers = {
   -- "ts_ls", -- typescript
-  "lua_ls", -- lua
-  "cssls", -- css
-  "jsonls", -- json
-  "tailwindcss", -- tailwindcss
-  "emmet_ls", -- emmet
-  "html", -- html
-  "dockerls", -- docker
+  "lua_ls",                          -- lua
+  "cssls",                           -- css
+  "jsonls",                          -- json
+  "tailwindcss",                     -- tailwindcss
+  "emmet_ls",                        -- emmet
+  "html",                            -- html
+  "dockerls",                        -- docker
   "docker_compose_language_service", -- docker-compose
-  "angularls", -- angular
-  "eslint", -- eslint
+  "angularls",                       -- angular
+  "eslint",                          -- eslint
   -- "vuels"
   "svelte",
   "graphql",
   "prismals",
-  "pyright", -- python
+  "pyright",      -- python
   -- "basedpyright", -- python
   "intelephense", -- php
-  "clangd", -- c/c++
-  "yamlls", -- yaml
+  "clangd",       -- c/c++
+  "yamlls",       -- yaml
 }
 
 --NOTE: lsp formatters
 U.lsp_formatters = {
   "prettier", -- prettier formatter
-  "stylua", -- lua formatter
-  "isort", -- python formatter
-  "black", -- python formatter
+  -- "stylua", -- lua formatter
+  "isort",    -- python formatter
+  "black",    -- python formatter
   "pylint",
   "eslint_d",
   "blade-formatter",
@@ -350,35 +350,35 @@ U.border = vim.g.doc_border_type == "single"
       { "╰", "FloatBorder" },
       { "│", "FloatBorder" },
     }
-  or vim.g.doc_border_type == "double" and {
-    { "╔", "FloatBorder" },
-    { "═", "FloatBorder" },
-    { "╗", "FloatBorder" },
-    { "║", "FloatBorder" },
-    { "╝", "FloatBorder" },
-    { "═", "FloatBorder" },
-    { "╚", "FloatBorder" },
-    { "║", "FloatBorder" },
-  }
-  or vim.g.doc_border_type == "padding" and {
-    { " ", "FloatBorder" },
-    { " ", "FloatBorder" },
-    { " ", "FloatBorder" },
-    { " ", "FloatBorder" },
-    { " ", "FloatBorder" },
-    { " ", "FloatBorder" },
-    { " ", "FloatBorder" },
-    { " ", "FloatBorder" },
-  }
-  or {
-    { "╭", "FloatBorder" },
-    { "─", "FloatBorder" },
-    { "╮", "FloatBorder" },
-    { "│", "FloatBorder" },
-    { "╯", "FloatBorder" },
-    { "─", "FloatBorder" },
-    { "╰", "FloatBorder" },
-    { "│", "FloatBorder" },
-  }
+    or vim.g.doc_border_type == "double" and {
+      { "╔", "FloatBorder" },
+      { "═", "FloatBorder" },
+      { "╗", "FloatBorder" },
+      { "║", "FloatBorder" },
+      { "╝", "FloatBorder" },
+      { "═", "FloatBorder" },
+      { "╚", "FloatBorder" },
+      { "║", "FloatBorder" },
+    }
+    or vim.g.doc_border_type == "padding" and {
+      { " ", "FloatBorder" },
+      { " ", "FloatBorder" },
+      { " ", "FloatBorder" },
+      { " ", "FloatBorder" },
+      { " ", "FloatBorder" },
+      { " ", "FloatBorder" },
+      { " ", "FloatBorder" },
+      { " ", "FloatBorder" },
+    }
+    or {
+      { "╭", "FloatBorder" },
+      { "─", "FloatBorder" },
+      { "╮", "FloatBorder" },
+      { "│", "FloatBorder" },
+      { "╯", "FloatBorder" },
+      { "─", "FloatBorder" },
+      { "╰", "FloatBorder" },
+      { "│", "FloatBorder" },
+    }
 
 return U
