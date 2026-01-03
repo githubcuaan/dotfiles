@@ -4,7 +4,12 @@ return {
   dependencies = {
     -- Bắt buộc phải có 2 thằng đệ này mới chạy được nhé
     "MunifTanjim/nui.nvim",
-    "rcarriga/nvim-notify",
+    {
+      "rcarriga/nvim-notify",
+      opts = {
+        background_colour = "#000000",
+      }
+    },
   },
   opts = {
     lsp = {
@@ -20,8 +25,8 @@ return {
       },
     },
     presets = {
-      bottom_search = true, -- Giữ thanh search (/) ở dưới (nếu thích)
-      command_palette = true, -- Biến cmdline (:) thành popup giữa màn hình -> CÁI BÁC CẦN LÀ ĐÂY
+      bottom_search = true,         -- Giữ thanh search (/) ở dưới (nếu thích)
+      command_palette = true,       -- Biến cmdline (:) thành popup giữa màn hình -> CÁI BÁC CẦN LÀ ĐÂY
       long_message_to_split = true, -- Tin nhắn dài quá thì đẩy vào split window
     },
   },
