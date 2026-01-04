@@ -30,7 +30,7 @@ return {
         return {
           -- [A] PHẦN ĐẦU (HEAD)
           {
-            { "    ", hl = theme.head },
+            { " 󰣇 ", hl = theme.head },
             line.sep("", theme.head, theme.fill),
           },
 
