@@ -11,6 +11,10 @@ return {
   lazy = false,
 
   config = function()
+    if vim.g.colors_name == "nord" then
+      vim.api.nvim_set_hl(0, "NormalFloat", { fg = "#D8DEE9", bg = "#2E3440" })
+      vim.api.nvim_set_hl(0, "FloatBorder", { fg = "#88C0D0", bg = "#2E3440" })
+    end
     -- 1. Keymaps outside setup
     vim.keymap.set("n", "<leader>e", ":Neotree toggle filesystem left<CR>", {
       desc = "Neotree: Đóng/Mở filesystem",
