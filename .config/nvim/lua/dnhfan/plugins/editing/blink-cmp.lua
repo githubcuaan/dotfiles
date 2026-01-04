@@ -24,8 +24,8 @@ return {
           vim.api.nvim_create_autocmd("InsertLeave", {
             callback = function()
               if
-                require("luasnip").session.current_nodes[vim.api.nvim_get_current_buf()]
-                and not require("luasnip").session.jump_active
+                  require("luasnip").session.current_nodes[vim.api.nvim_get_current_buf()]
+                  and not require("luasnip").session.jump_active
               then
                 require("luasnip").unlink_current()
               end
@@ -95,7 +95,7 @@ return {
           scrollbar = true,
           scrolloff = 2,
           border = require("dnhfan.core.utils").border,
-          winhighlight = "Normal:NormalFloat,FloatBorder:FloatBorder,CursorLine:PmenuSel,Search:None",
+          winhighlight = "Normal:None,FloatBorder:None,CursorLine:PmenuSel,Search:None",
           draw = {
             padding = 1,
             gap = 2,
@@ -109,7 +109,7 @@ return {
             },
             columns = {
               { "kind_icon" },
-              { "label", "label_description", gap = 1 },
+              { "label",    "label_description", gap = 1 },
               -- { 'source_name' },
             },
             components = {
@@ -134,7 +134,7 @@ return {
           auto_show_delay_ms = 200,
           window = {
             border = require("dnhfan.core.utils").border,
-            winhighlight = "Normal:NormalFloat,FloatBorder:FloatBorder,CursorLine:PmenuSel,Search:None",
+            winhighlight = "Normal:None,FloatBorder:None,CursorLine:PmenuSel,Search:None",
           },
         },
         ghost_text = { enabled = false },
@@ -150,7 +150,7 @@ return {
         window = {
           treesitter_highlighting = true,
           border = require("dnhfan.core.utils").border,
-          winhighlight = "Normal:NormalFloat,FloatBorder:FloatBorder,CursorLine:PmenuSel,Search:None",
+          winhighlight = "Normal:None,FloatBorder:None,CursorLine:PmenuSel,Search:None",
         },
       },
       snippets = {
@@ -209,7 +209,7 @@ return {
             draw = {
               columns = {
                 { "kind_icon" },
-                { "label", "label_description", gap = 1 },
+                { "label",    "label_description", gap = 1 },
                 -- { 'source_name' },
               },
             },
