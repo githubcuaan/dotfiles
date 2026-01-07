@@ -69,6 +69,13 @@ return {
             severity_sort = true,
             float = { border = require("dnhfan.core.utils").border, source = true },
           })
+
+          -- 1. Làm trong suốt nền của cái bảng Diagnostic (và cả Hover doc luôn)
+          vim.api.nvim_set_hl(0, "NormalFloat", { bg = "NONE" })
+
+          -- 2. Làm trong suốt nền của cái viền (Border) cho nó đồng bộ
+          -- Nếu không set cái này thì cái viền nó vẫn có màu nền, nhìn dị lắm
+          vim.api.nvim_set_hl(0, "FloatBorder", { bg = "NONE" })
         end,
       },
     },
