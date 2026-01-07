@@ -332,6 +332,7 @@ U.treesitter_parsers = {
   "gitignore",
   "query",
   "c",
+  "cpp",
   "php",
 }
 
