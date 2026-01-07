@@ -28,6 +28,8 @@ return {
       bottom_search = true,         -- Giữ thanh search (/) ở dưới (nếu thích)
       command_palette = true,       -- Biến cmdline (:) thành popup giữa màn hình -> CÁI BÁC CẦN LÀ ĐÂY
       long_message_to_split = true, -- Tin nhắn dài quá thì đẩy vào split window
+
+      lsp_doc_border = true,
     },
   },
 }
