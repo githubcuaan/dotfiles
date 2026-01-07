@@ -47,6 +47,16 @@ fi
 # alias
 # ========================
 
+# --- ALIAS CHO EZA (Thay thế ls) ---
+# ls thường: hiện icon, gom folder lên đầu
+
+alias ls='eza --icons --group-directories-first -1'
+# ll: hiện list chi tiết, có quyền, size, ngày tháng
+alias ll='eza -al --icons --group-directories-first --time-style=long-iso'
+
+# tree: hiện dạng cây thư mục (siêu tiện)
+alias tree='eza --tree --icons'
+
 alias v='nvim'
 
 # moving alias
