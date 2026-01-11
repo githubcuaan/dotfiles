@@ -30,20 +30,19 @@ return {
         return {
           -- [A] PHẦN ĐẦU (HEAD)
           {
-            { " 󰣇 ", hl = theme.head },
-            line.sep("", theme.head, theme.fill),
+            { "  󰣇  ", hl = theme.head },
           },
 
           -- [B] DANH SÁCH TABS
           line.tabs().foreach(function(tab)
             local hl = tab.is_current() and theme.current_tab or theme.tab
             return {
-              line.sep("", hl, theme.fill),
+              line.sep("|", hl, theme.fill),
               tab.is_current() and "" or "󰆣", -- Icon cho Active/Inactive Tab
               tab.number(),
               tab.name(),
-              tab.close_btn(""),
-              line.sep("", hl, theme.fill),
+              { " " },
+              tab.close_btn(" "),
               hl = hl,
               margin = " ",
             }
@@ -55,10 +54,9 @@ return {
           -- [D] DANH SÁCH WINDOWS/BUFFERS TRONG TAB HIỆN TẠI
           line.wins_in_tab(line.api.get_current_tab()).foreach(function(win)
             return {
-              line.sep("", theme.win, theme.fill),
-              win.is_current() and "" or "", -- Icon cho Active/Inactive Window/Buffer
+              win.is_current() and " " or " ", -- Icon cho Active/Inactive Window/Buffer
               win.buf_name(),
-              line.sep("", theme.win, theme.fill),
+              line.sep("|", theme.win, theme.fill),
               hl = theme.win,
               margin = " ",
             }
@@ -66,7 +64,6 @@ return {
 
           -- [E] PHẦN ĐUÔI (TAIL)
           {
-            line.sep("", theme.tail, theme.fill),
             { "  ", hl = theme.tail },
           },
 
@@ -76,7 +73,8 @@ return {
     })
     if vim.g.colors_name == "nord" then
       -- Sử dụng màu Nord1 (#3B4252) để tạo độ sâu, tách biệt với nền editor (#2E3440)
-      vim.api.nvim_set_hl(0, "TabLineFill", { bg = "#242933" })
+      vim.api.nvim_set_hl(0, "TabLineFill", { bg = "#3B4252" })
+      vim.api.nvim_set_hl(0, "TabLine", { bg = "#434C5E" })
     end
   end,
 }
