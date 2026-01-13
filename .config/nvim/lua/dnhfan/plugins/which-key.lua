@@ -1,33 +1,63 @@
 return {
   "folke/which-key.nvim",
   event = "VeryLazy",
-  init = function()
-    vim.o.timeout = true
-    vim.o.timeoutlen = 500
-  end,
+  opts_extend = { "spec" },
   opts = {
-    -- 1. Dùng preset "modern" cho đẹp (nó tự có border bo cong nhẹ)
-    preset = "modern",
-
-    -- 2. Config chi tiết cho cửa sổ
-    win = {
-      -- Border: "rounded" (cong), "single" (mảnh), "double" (đôi), "shadow" (bóng)
-      border = "rounded",
-      -- Padding bên trong cho thoáng
-      padding = { 2, 2 },
-      -- Title hiển thị ở trên border (nếu thích)
-      title = true,
-      title_pos = "center",
-      zindex = 1000,
+    preset = "helix",
+    defaults = {},
+    spec = {
+      {
+        mode = { "n", "x" },
+        { "<leader><tab>", group = "tabs" },
+        { "<leader>c",     group = "code" },
+        { "<leader>d",     group = "debug" },
+        { "<leader>dp",    group = "profiler" },
+        { "<leader>f",     group = "file/find" },
+        { "<leader>g",     group = "git" },
+        { "<leader>gh",    group = "hunks" },
+        { "<leader>q",     group = "quit/session" },
+        { "<leader>s",     group = "search" },
+        { "<leader>u",     group = "ui" },
+        { "<leader>x",     group = "diagnostics/quickfix" },
+        { "[",             group = "prev" },
+        { "]",             group = "next" },
+        { "g",             group = "goto" },
+        { "gs",            group = "surround" },
+        { "z",             group = "fold" },
+        {
+          "<leader>b",
+          group = "buffer",
+          expand = function()
+            return require("which-key.extras").expand.buf()
+          end,
+        },
+        {
+          "<leader>w",
+          group = "windows",
+          proxy = "<c-w>",
+          expand = function()
+            return require("which-key.extras").expand.win()
+          end,
+        },
+        -- better descriptions
+        { "gx", desc = "Open with system app" },
+      },
     },
-
-    -- 3. Layout: Cái này quan trọng để định vị
-    layout = {
-      height = { min = 4, max = 25 },
-      -- Giới hạn chiều rộng: Đừng để nó full màn hình
-      width = { min = 20, max = 50 },
-      spacing = 3,
-      align = "center",
+  },
+  keys = {
+    {
+      "<leader>?",
+      function()
+        require("which-key").show({ global = false })
+      end,
+      desc = "Buffer Keymaps (which-key)",
+    },
+    {
+      "<c-w><space>",
+      function()
+        require("which-key").show({ keys = "<c-w>", loop = true })
+      end,
+      desc = "Window Hydra Mode (which-key)",
     },
   },
 }
