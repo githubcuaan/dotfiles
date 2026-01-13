@@ -79,9 +79,9 @@ return {
             icon = {
               " :",
               color = {
-                fg = vim.opt.background._value == "light" and require("utils").light_palette.red
-                  or require("dnhfan.core.utils").dark_palette.red, -- default to red if terminal color is not set
-                bg = "none", -- no background color
+                fg = vim.opt.background._value == "light" and require("dnhfan.core.utils").light_palette.red
+                    or require("dnhfan.core.utils").dark_palette.red, -- default to red if terminal color is not set
+                bg = "none",                                        -- no background color
               },
               -- color = function ()
               --   local opt = {}
@@ -97,9 +97,9 @@ return {
             sections = { "error", "warn", "info", "hint" },
             diagnostics_color = {
               error = "diagnosticsignerror", -- changes diagnostics' error color.
-              warn = "diagnosticsignwarn", -- changes diagnostics' warn color.
-              info = "diagnosticsigninfo", -- changes diagnostics' info color.
-              hint = "diagnosticsignhint", -- changes diagnostics' hint color.
+              warn = "diagnosticsignwarn",   -- changes diagnostics' warn color.
+              info = "diagnosticsigninfo",   -- changes diagnostics' info color.
+              hint = "diagnosticsignhint",   -- changes diagnostics' hint color.
             },
             symbols = {
               error = sign_icon.error .. " ",
@@ -107,9 +107,9 @@ return {
               info = sign_icon.info .. " ",
               hint = sign_icon.hint .. " ",
             },
-            colored = true, -- displays diagnostics status in color if set to true.
+            colored = true,           -- displays diagnostics status in color if set to true.
             update_in_insert = false, -- update diagnostics in insert mode.
-            always_visible = false, -- show diagnostics even if there are none.
+            always_visible = false,   -- show diagnostics even if there are none.
           },
           {
             "diff",
@@ -120,8 +120,8 @@ return {
               " :",
               color = {
                 fg = vim.opt.background == "light" and require("dnhfan.core.utils").light_palette.red
-                  or require("dnhfan.core.utils").dark_palette.red, -- default to red if terminal color is not set
-                bg = nil, -- no background color
+                    or require("dnhfan.core.utils").dark_palette.red, -- default to red if terminal color is not set
+                bg = nil,                                           -- no background color
               },
               -- color = function ()
               --   local opt = {}
@@ -133,11 +133,11 @@ return {
               -- end
             },
             padding = 1,
-            colored = true, -- displays a colored diff status if set to true
+            colored = true,                -- displays a colored diff status if set to true
             diff_color = {
-              added = "gitsignsadd", -- changes the diff's added color
+              added = "gitsignsadd",       -- changes the diff's added color
               modified = "gitsignschange", -- changes the diff's modified color
-              removed = "gitsignsdelete", -- changes the diff's removed color you
+              removed = "gitsignsdelete",  -- changes the diff's removed color you
             },
             symbols = {
               removed = sign_icon.delete .. " ",
@@ -150,7 +150,7 @@ return {
         lualine_y = {
           {
             "filetype",
-            colored = true, -- displays filetype icon in color if set to true
+            colored = true,    -- displays filetype icon in color if set to true
             icon_only = false, -- display only an icon for filetype
             icon = { align = "left" },
             fmt = function()
