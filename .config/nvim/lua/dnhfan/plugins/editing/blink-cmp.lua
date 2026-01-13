@@ -1,3 +1,5 @@
+-- Blink: an auto completion for nvim
+
 return {
   {
     "saghen/blink.cmp",

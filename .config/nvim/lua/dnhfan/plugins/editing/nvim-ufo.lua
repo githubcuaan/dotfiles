@@ -10,7 +10,7 @@ return {
   config = function()
     -- Tắt folding mặc định của nvim đi để ufo nó lo
     vim.o.foldcolumn = "0" -- Hiện cột fold bên trái
-    vim.o.foldlevel = 99 -- Mở tất cả code khi mới vào file
+    vim.o.foldlevel = 99   -- Mở tất cả code khi mới vào file
     vim.o.foldlevelstart = 99
     vim.o.foldenable = true
 

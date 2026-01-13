@@ -1,3 +1,5 @@
+-- Substitute: for replacting with motions
+
 return {
   "gbprod/substitute.nvim",
   event = { "BufReadPre", "BufNewFile" },

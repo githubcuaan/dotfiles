@@ -1,3 +1,5 @@
+-- Format: for auto formatting
+
 return {
   "stevearc/conform.nvim",
   event = { "BufReadPre", "BufNewFile" },

@@ -1,3 +1,5 @@
+-- TODO: for highting todo comment
+
 return {
   "folke/todo-comments.nvim",
   event = { "BufReadPre", "BufNewFile" },
