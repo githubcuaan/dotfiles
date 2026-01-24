@@ -288,6 +288,7 @@ U.lsp_servers = {
   "intelephense", -- php
   "clangd",       -- c/c++
   "yamlls",       -- yaml
+  "vtsls",
 }
 
 --NOTE: lsp formatters
