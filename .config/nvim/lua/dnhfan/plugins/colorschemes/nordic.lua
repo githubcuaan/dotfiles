@@ -2,15 +2,15 @@ return vim.b.colorscheme ~= "nordic" and {} or {
   'AlexvZyl/nordic.nvim',
   priority = 100,
   config = function()
-    require 'nordic' .setup {
+    require 'nordic'.setup {
       on_palette = function(palette)
         return palette
       end,
       bold_keywords = true,
       italic_comments = true,
       transparent = {
-        bg = false,
-        float =  false
+        bg = true,
+        float = true,
       },
       bright_border = false,
       reduced_blue = false,
@@ -25,9 +25,8 @@ return vim.b.colorscheme ~= "nordic" and {} or {
       telescope = { style = 'flat' },
       leap = { dim_backdrop = false },
       ts_context = { dark_background = true },
-      on_highlight = function (highlights, palette) end
+      on_highlight = function(highlights, palette) end
     }
     vim.cmd.colorscheme("nordic")
   end
 }
-

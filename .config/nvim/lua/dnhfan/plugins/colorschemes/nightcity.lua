@@ -1,10 +1,10 @@
 return vim.b.colorscheme ~= "nightcity" and {} or {
   "cryptomilk/nightcity.nvim",
   priority = 100,
-  config = function ()
+  config = function()
     require('nightcity').setup({
       -- kabuki or afterlife
-      style = 'afterlife', -- The theme comes in two styles: kabuki or afterlife
+      style = 'afterlife',    -- The theme comes in two styles: kabuki or afterlife
       terminal_colors = true, -- Use colors used when opening a `:terminal`
       invert_colors = {
         -- Invert colors for the following syntax groups

@@ -2,10 +2,10 @@ return vim.b.colorscheme ~= "cyberdream" and {} or {
   "scottmckendry/cyberdream.nvim",
   priority = 100,
   name = "cyberdream",
-  config = function ()
+  config = function()
     require("cyberdream").setup({
       -- Enable transparent background
-      transparent = false,
+      transparent = true,
 
       -- Enable italics comments
       italic_comments = false,

@@ -1,7 +1,7 @@
 return vim.b.colorscheme ~= "fluoromachine" and {} or {
   'maxmx03/fluoromachine.nvim',
   priority = 100,
-  config = function ()
+  config = function()
     local fm = require 'fluoromachine'
 
     fm.setup {

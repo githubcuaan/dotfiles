@@ -4,8 +4,8 @@ return vim.b.colorscheme ~= "nightfly" and {} or {
   name = "nightfly",
   config = function()
     vim.g.nightflyVirtualTextColor = true
+    vim.g.nightflyTransparent = true
     vim.g.nightglyItalic = true
     vim.cmd.colorscheme "nightfly"
   end
 }
-
