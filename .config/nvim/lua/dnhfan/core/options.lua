@@ -62,3 +62,8 @@ opt.splitbelow = true -- split horizontal window to the bottom
 
 -- turn off swapfile
 opt.swapfile = false
+
+vim.opt.timeoutlen = 300
+-- Thêm "localoptions" vào cuối danh sách để nó lưu mấy cái setting riêng của buffer
+vim.opt.sessionoptions =
+{ "blank", "buffers", "curdir", "folds", "help", "tabpages", "winsize", "winpos", "terminal", "localoptions" }
