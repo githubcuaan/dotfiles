@@ -10,8 +10,10 @@ require("dnhfan.core").setup({
   float_window_brightness = 40,
   better_cmp_cursor_line = true,
   line_space = 0,
-  -- colorscheme = "catppuccin.mocha",
-  colorscheme = "nord",
+  -- colorscheme = "catppuccin-latte",
+  -- colorscheme = "rose-pine",
+  -- colorscheme = "nord",
+  colorscheme = "nightfly",
 })
-require("dnhfan.lsp")
+require("dnhfan.keymap-lsp")
 require("dnhfan.lazy")
