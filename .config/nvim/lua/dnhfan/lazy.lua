@@ -19,6 +19,7 @@ require("lazy").setup({
   { import = "dnhfan.plugins.ui" },
   { import = "dnhfan.plugins.lsp" },
   { import = "dnhfan.plugins.laravel" },
+  { import = "dnhfan.plugins.datasience" },
 }, {
   checker = {
     enabled = true,
