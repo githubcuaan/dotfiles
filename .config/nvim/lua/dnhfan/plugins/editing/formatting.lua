@@ -25,7 +25,8 @@ return {
         python = { "ruff_fix", "ruff_format" },
         php = { "pretty-php" },
         blade = { "blade-formatter" },
-        dockerfile = { "prettier" },
+        dockerfile = {},
+        nginx = { "nginxfmt" },
       },
       format_on_save = {
         lsp_fallback = true,

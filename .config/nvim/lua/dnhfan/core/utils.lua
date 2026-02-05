@@ -335,6 +335,7 @@ U.treesitter_parsers = {
   "c",
   "cpp",
   "php",
+  "nginx",
 }
 
 U.spinner_frames = { "⣾", "⣽", "⣻", "⢿", "⡿", "⣟", "⣯", "⣷" }
