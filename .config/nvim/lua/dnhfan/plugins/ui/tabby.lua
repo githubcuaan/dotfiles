@@ -6,13 +6,13 @@ return {
     -- 0. PHÍM TẮT
     -- Loop từ 1 đến 9, map <Leader> + số để nhảy tab
     for i = 1, 9 do
-      vim.keymap.set("n", "<leader>t" .. i, function()
+      vim.keymap.set("n", "<leader><tab>" .. i, function()
         vim.cmd("tabnext " .. i)
       end, { desc = "Tabby: Nhảy ngay tới tab " .. i })
     end
 
     -- Bonus: Map thêm phím 0 để nhảy về tab cuối cùng (thường là tab mới nhất)
-    vim.keymap.set("n", "<leader>t0", ":tablast<CR>", { desc = "Tabby: Nhảy tới tab cuối cùng" })
+    vim.keymap.set("n", "<leader><tab>0", ":tablast<CR>", { desc = "Tabby: Nhảy tới tab cuối cùng" })
 
     -- 1. ĐỊNH NGHĨA THEME (TÁCH BIỆT)
     local theme = {
