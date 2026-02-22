@@ -64,8 +64,6 @@ alias ..='cd ..'         # Lên thư mục cha
 alias ...='cd ../..'     # Lên 2 thư mục cha
 alias ll='ls -alF'       # Xem danh sách chi tiết (ẩn, thư mục, có dấu /)
 
-alias cl='clear'
-
 # ========================
 #     Global env var
 # ========================
@@ -99,7 +97,7 @@ function y() {
 }
 
 # ----- Zoxide setup -----
-eval "$(zoxide init zsh)"
+eval "$(zoxide init zsh --cmd cd)"
 
 # ----- FZF setup -----
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
@@ -123,10 +121,10 @@ eval "$(starship init zsh)"
 export PATH=$HOME/.opencode/bin:$PATH
 
 # pyenv setup - not yet
-# export PYENV_ROOT="$HOME/.pyenv"
-# export PATH="$PYENV_ROOT/bin:$PATH"
-# eval "$(pyenv init -)"
-# eval "$(pyenv virtualenv-init -)"
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
 
 # since i using pacman / yay to install, this thing no more need
 # . "$HOME/.atuin/bin/env"

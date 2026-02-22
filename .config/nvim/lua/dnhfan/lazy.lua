@@ -15,11 +15,10 @@ require("lazy").setup({
   { import = "dnhfan.plugins" },
   { import = "dnhfan.plugins.colorschemes" },
   { import = "dnhfan.plugins.ai" },
-  { import = "dnhfan.plugins.editing" },
+  { import = "dnhfan.plugins.editor" },
   { import = "dnhfan.plugins.ui" },
   { import = "dnhfan.plugins.lsp" },
-  { import = "dnhfan.plugins.laravel" },
-  { import = "dnhfan.plugins.datasience" },
+  { import = "dnhfan.plugins.datascience" },
 }, {
   checker = {
     enabled = true,

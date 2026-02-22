@@ -41,10 +41,6 @@ M.setup = function(params)
     vim.b.transparent_background = params.transparent_background
   end
 
-  if params.mapleader ~= nil then
-    vim.g.mapleader = params.mapleader
-  end
-
   if params.float_window_brightness ~= nil then
     vim.b.float_window_brightness = params.float_window_brightness
   end

@@ -39,8 +39,11 @@ return {
             return require("which-key.extras").expand.win()
           end,
         },
+        { "<leader>wd", "<cmd>vertical resize -5<cr>" },
+        { "<leader>wi", "<cmd>vertical resize +5<cr>" },
+        { "<leader>w=", "<c-w>=" },
         -- better descriptions
-        { "gx", desc = "Open with system app" },
+        { "gx",         desc = "Open with system app" },
       },
     },
   },
