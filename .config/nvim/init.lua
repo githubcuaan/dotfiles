@@ -15,5 +15,4 @@ require("dnhfan.core").setup({
   -- colorscheme = "nord",
   colorscheme = "nightfly",
 })
-require("dnhfan.keymap-lsp")
 require("dnhfan.lazy")
