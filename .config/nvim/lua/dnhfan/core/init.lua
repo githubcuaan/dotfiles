@@ -10,6 +10,7 @@ vim.b.border_color = "#ffffff"
 vim.b.transparent_background = false
 vim.b.thick_win_separator = false
 vim.b.float_window_brightness = 0
+vim.opt.equalalways = false
 -- "bold": Bold line box.
 -- "double": Double-line box.
 -- "none": No border.
