@@ -1,5 +1,6 @@
 require("dnhfan.core.options")
 require("dnhfan.core.keymaps")
+require("dnhfan.core.keymap-lsp")
 
 local M = {}
 

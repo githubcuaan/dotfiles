@@ -20,7 +20,7 @@ vim.api.nvim_create_autocmd("LspAttach", {
     keymap.set("n", "<leader>rn", vim.lsp.buf.rename, opts)
 
     opts.desc = "LSP: Chẩn đoán dòng (Line Diagnostics)"
-    keymap.set("n", "<leader>d", vim.diagnostic.open_float, opts)
+    keymap.set("n", "<leader>xx", vim.diagnostic.open_float, opts)
 
     opts.desc = "LSP: Chẩn đoán trước/sau"
     keymap.set("n", "[d", function() vim.diagnostic.jump({ count = -1, float = true }) end, opts)
