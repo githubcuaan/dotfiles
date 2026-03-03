@@ -5,32 +5,54 @@ return {
   opts = {
     preset = "helix",
     defaults = {},
+
     spec = {
       {
         mode = { "n", "x" },
         { "<leader><tab>", group = "tabs" },
         { "<leader>c",     group = "code" },
         -- { "<leader>d",     group = "debug" },
-        { "<leader>dp",    group = "profiler" },
         { "<leader>f",     group = "file/find" },
         { "<leader>g",     group = "git" },
         { "<leader>gh",    group = "hunks" },
-        { "<leader>q",     group = "quit/session" },
         { "<leader>s",     group = "search" },
         { "<leader>u",     group = "ui" },
         { "<leader>x",     group = "diagnostics/quickfix" },
         { "[",             group = "prev" },
         { "]",             group = "next" },
         { "g",             group = "goto" },
-        { "gs",            group = "surround" },
+        { "Z",             group = "surround" },
         { "z",             group = "fold" },
+        { "<leader>G",     group = "github" },
+        { "<leader>m",     group = "formatter" },
+
         {
           "<leader>b",
           group = "buffer",
-          expand = function()
-            return require("which-key.extras").expand.buf()
-          end,
+          { "<leader>bp", "<cmd>BufferLineCyclePrev<cr>", desc = "Prev Buffer" },
+          { "<leader>bn", "<cmd>BufferLineCycleNext<cr>", desc = "Next Buffer" },
         },
+
+        {
+          "<leader>q",
+          group = "quit/session",
+          { "<leader>qq", "<cmd>qa<cr>", desc = "Quit All", icon = { icon = "󰈆 ", color = "red" } },
+          { "<leader>qw", "<cmd>wqa<cr>", desc = "Save and Quit All", icon = { icon = "󰆓 ", color = "green" } },
+          { "<leader>q!", "<cmd>qa!<cr>", desc = "Quit Without Saving", icon = { icon = " ", color = "orange" } },
+        },
+
+        {
+          "<leader>j",
+          group = "jupyter",
+          icon = { icon = "", color = "orange" },
+        },
+
+        {
+          "<leader>r",
+          group = "substitute",
+          icon = ""
+        },
+
         {
           "<leader>w",
           group = "windows",
@@ -42,25 +64,41 @@ return {
         { "<leader>wd", "<cmd>vertical resize -5<cr>" },
         { "<leader>wi", "<cmd>vertical resize +5<cr>" },
         { "<leader>w=", "<c-w>=" },
+
         -- better descriptions
         { "gx",         desc = "Open with system app" },
+
+        {
+          "<leader><tab>",
+          group = "tabs",
+          icon = "󰓩 ",
+          { "<leader><tab>o", "<cmd>tabnew<cr>", desc = "New Tab", icon = "󰝒 " },
+          { "<leader><tab>x", "<cmd>tabclose<cr>", desc = "Close Tab", icon = "󰅖 " },
+          { "<leader><tab>n", "<cmd>tabnext<cr>", desc = "Next Tab", icon = "󰙫 " },
+          { "<leader><tab>p", "<cmd>tabprevious<cr>", desc = "Prev Tab", icon = "󰙣 " },
+          { "<leader><tab>f", "<cmd>tabfirst<cr>", desc = "First Tab" },
+          { "<leader><tab>l", "<cmd>tablast<cr>", desc = "Last Tab" },
+        },
       },
     },
   },
-  keys = {
-    {
-      "<leader>?",
-      function()
-        require("which-key").show({ global = false })
-      end,
-      desc = "Buffer Keymaps (which-key)",
-    },
-    {
-      "<c-w><space>",
-      function()
-        require("which-key").show({ keys = "<c-w>", loop = true })
-      end,
-      desc = "Window Hydra Mode (which-key)",
-    },
-  },
+
+  config = function(_, opts)
+    local wk = require("which-key")
+    wk.setup(opts)
+
+    -- Tự động tạo phím tắt từ 1 đến 9 cho Bufferline
+    local buffer_mappings = {}
+    for i = 1, 9 do
+      table.insert(buffer_mappings, {
+        "<leader>b" .. i,
+        function() require("bufferline").go_to(i, true) end,
+        desc = "Buffer " .. i,
+        icon = " ", -- Icon số tương ứng cho "màu mè"
+      })
+    end
+
+    -- Đăng ký bộ số này với Which-key
+    wk.add(buffer_mappings)
+  end
 }

@@ -24,8 +24,8 @@ return {
     })
 
     -- 3. Keymap thủ công (Cho chắc cốp)
-    vim.keymap.set("n", "<leader>lt", function()
-      lint.try_lint()
-    end, { desc = "Linting: Trigger linting cho file hiện tại." })
+    -- vim.keymap.set("n", "<leader>lt", function()
+    --   lint.try_lint()
+    -- end, { desc = "Linting: Trigger linting cho file hiện tại." })
   end,
 }
