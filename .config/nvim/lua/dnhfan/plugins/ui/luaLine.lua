@@ -69,7 +69,36 @@ return {
             end,
           },
         },
-        lualine_c = {},
+        lualine_c = {
+          {
+            -- Hiển thị tên Project (Folder hiện tại)
+            function()
+              return "󰃠 " .. vim.fn.fnamemodify(vim.fn.getcwd(), ":t")
+            end,
+            color = { fg = "#88C0D0", gui = "bold" },
+          },
+          {
+            -- Tự viết hàm bắt trạng thái Recording Macro và Search Count
+            function()
+              -- 1. Check Recording Macro
+              local reg = vim.fn.reg_recording()
+              if reg ~= "" then
+                return "󰑊 Recording @" .. reg
+              end
+
+              -- 2. Check Search Count (Hiển thị kiểu 1/10 khi nhấn /)
+              if vim.v.hlsearch == 1 then
+                local res = vim.fn.searchcount({ maxcount = 999, timeout = 500 })
+                if res.total > 0 then
+                  return string.format("  %d/%d", res.current, res.total)
+                end
+              end
+
+              return ""
+            end,
+            color = { fg = "#ebcb8b", gui = "bold" }, -- Màu vàng Nord đặc trưng
+          },
+        },
         lualine_x = {
           {
             "diagnostics",
