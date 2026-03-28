@@ -9,22 +9,21 @@ return {
     spec = {
       {
         mode = { "n", "x" },
-        { "<leader><tab>", group = "tabs" },
-        { "<leader>c",     group = "code" },
+        { "<leader>c",  group = "code" },
         -- { "<leader>d",     group = "debug" },
-        { "<leader>f",     group = "file/find" },
-        { "<leader>g",     group = "git" },
-        { "<leader>gh",    group = "hunks" },
-        { "<leader>s",     group = "search" },
-        { "<leader>u",     group = "ui" },
-        { "<leader>x",     group = "diagnostics/quickfix" },
-        { "[",             group = "prev" },
-        { "]",             group = "next" },
-        { "g",             group = "goto" },
-        { "Z",             group = "surround" },
-        { "z",             group = "fold" },
-        { "<leader>G",     group = "github" },
-        { "<leader>m",     group = "formatter" },
+        { "<leader>f",  group = "file/find" },
+        { "<leader>g",  group = "git" },
+        { "<leader>gh", group = "hunks" },
+        { "<leader>s",  group = "search" },
+        { "<leader>u",  group = "ui" },
+        { "<leader>x",  group = "diagnostics/quickfix" },
+        { "[",          group = "prev" },
+        { "]",          group = "next" },
+        { "g",          group = "goto" },
+        { "Z",          group = "surround" },
+        { "z",          group = "fold" },
+        { "<leader>G",  group = "github" },
+        { "<leader>m",  group = "formatter" },
 
         {
           "<leader>b",
@@ -60,13 +59,15 @@ return {
           expand = function()
             return require("which-key.extras").expand.win()
           end,
+
+          { "<leader>wd", "<cmd>vertical resize -5<cr>" },
+          { "<leader>wi", "<cmd>vertical resize +5<cr>" },
+          { "<leader>w=", "<c-w>=" },
+
         },
-        { "<leader>wd", "<cmd>vertical resize -5<cr>" },
-        { "<leader>wi", "<cmd>vertical resize +5<cr>" },
-        { "<leader>w=", "<c-w>=" },
 
         -- better descriptions
-        { "gx",         desc = "Open with system app" },
+        { "gx", desc = "Open with system app" },
 
         {
           "<leader><tab>",
@@ -98,7 +99,19 @@ return {
       })
     end
 
+    -- Tự động tạo phím tắt từ 1 đến 9 cho Tabs
+    local tab_mapings = {}
+    for i = 1, 9 do
+      table.insert(buffer_mappings, {
+        "<leader><tab>" .. i,
+        function()
+          vim.cmd("tabn" .. i)
+        end,
+        desc = "Goto tab " .. i
+      })
+    end
+
     -- Đăng ký bộ số này với Which-key
-    wk.add(buffer_mappings)
+    wk.add(buffer_mappings, tab_mapings)
   end
 }

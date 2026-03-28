@@ -90,7 +90,8 @@ return {
               local pos = vim.g.ui_cmdline_pos -- (1, 0)-indexed
               return { pos[1] - 1, pos[2] }
             end
-            local height = (vim.o.cmdheight == 0) and 1 or vim.o.cmdheight
+            -- local height = (vim.o.cmdheight == 0) and 1 or vim.o.cmdheight
+            local height = 2
             return { vim.o.lines - height, 0 }
           end,
           auto_show = true,
@@ -130,6 +131,7 @@ return {
             },
           },
         },
+
         documentation = {
           auto_show = true,
           treesitter_highlighting = true,
@@ -139,6 +141,8 @@ return {
             winhighlight = "Normal:None,FloatBorder:None,CursorLine:PmenuSel,Search:None",
           },
         },
+
+
         ghost_text = { enabled = false },
         list = {
           max_items = 20,
@@ -207,7 +211,7 @@ return {
             },
           },
           menu = {
-            auto_show = true, -- Inherits from top level `completion.menu.auto_show` config when not set
+            auto_show = false, -- Inherits from top level `completion.menu.auto_show` config when not set
             draw = {
               columns = {
                 { "kind_icon" },
