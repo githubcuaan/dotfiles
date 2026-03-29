@@ -54,7 +54,16 @@ return {
 
       vim.keymap.set("n", "<leader>joo", ":MoltenEnterOutput<CR>", { desc = "Enter MolenOutput" })
 
-      vim.g.molten_virt_text_output_max_height = 25
+      vim.keymap.set("n", "<leader>jos", ":MoltenShowOutput<CR>", {
+        desc = "Hiện cửa sổ Output (để chuẩn bị nhảy vào)", silent = true
+      })
+
+      vim.keymap.set("n", "<leader>joy", ":MolenYankOutput")
+
+      ---------------------------------------------------------
+      -- MOLTEN CONFIG
+      -----------------------------------------------------------
+      vim.g.molten_virt_text_output_max_height = 30
     end,
   },
 }
