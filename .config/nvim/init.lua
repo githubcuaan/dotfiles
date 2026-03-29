@@ -10,8 +10,10 @@ require("dnhfan.core").setup({
   better_cmp_cursor_line = true,
   line_space = 0,
   -- colorscheme = "catppuccin-latte",
-  -- colorscheme = "rose-pine",
+  colorscheme = "rose-pine",
   -- colorscheme = "nord",
-  colorscheme = "nightfly",
+  -- colorscheme = "nightfly",
+  -- colorscheme = "solarized",
+  -- colorscheme = "nightcity",
 })
 require("dnhfan.lazy")
