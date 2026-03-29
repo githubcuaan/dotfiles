@@ -45,7 +45,7 @@ return {
             function()
               return "dnhfan"
             end,
-            icon = "",
+            icon = "",
             -- color = function()
             --   local opts = {}
             --   if vim.g.terminal_color_4 then
@@ -186,29 +186,29 @@ return {
               return vim.fn.fnamemodify(vim.api.nvim_buf_get_name(vim.api.nvim_get_current_buf()), ":t")
             end,
           },
-          -- {
-          --   function ()
-          --     local curr_line = vim.fn.line('.')
-          --     local lines = vim.fn.line('$')
-          --     local sbar = require("utils").sbar
-          --     local divide = curr_line / lines
-          --     local percentage = curr_line == 1 and "top"
-          --     or curr_line == lines
-          --     and "bot"
-          --     or require("init").round(divide * 100) .. '%%'
-          --     local i = require("init").round(divide * #sbar)
-          --     i = i == 0 and 1 or i
-          --
-          --     return percentage .. ' ' .. sbar[i]
-          --   end,
-          --   color = function ()
-          --     local opts = {}
-          --     if vim.g.terminal_color_3 then
-          --       opts.fg = vim.g.terminal_color_3
-          --     end
-          --     return opts
-          --   end
-          -- },
+          {
+            function()
+              local curr_line = vim.fn.line('.')
+              local lines = vim.fn.line('$')
+              local sbar = require("utils").sbar
+              local divide = curr_line / lines
+              local percentage = curr_line == 1 and "top"
+                  or curr_line == lines
+                  and "bot"
+                  or require("init").round(divide * 100) .. '%%'
+              local i = require("init").round(divide * #sbar)
+              i = i == 0 and 1 or i
+
+              return percentage .. ' ' .. sbar[i]
+            end,
+            color = function()
+              local opts = {}
+              if vim.g.terminal_color_3 then
+                opts.fg = vim.g.terminal_color_3
+              end
+              return opts
+            end
+          },
         },
         lualine_z = {
           -- {
