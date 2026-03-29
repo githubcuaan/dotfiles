@@ -6,7 +6,7 @@ return {
     "williamboman/mason.nvim",
     "williamboman/mason-lspconfig.nvim",
     { "antosha417/nvim-lsp-file-operations", config = true },
-    { "folke/lazydev.nvim", opts = {} },
+    { "folke/lazydev.nvim",                  opts = {} },
   },
   config = function()
     local lspconfig = require("lspconfig")
@@ -65,25 +65,6 @@ return {
             },
           })
         end,
-
-        -- Custom handler for basedpyright
-        -- ["basedpyright"] = function()
-        --   lspconfig.basedpyright.setup({
-        --     capabilities = capabilities,
-        --
-        --     -- 2. [PHẦN QUAN TRỌNG] Đừng xóa cái này, xóa là nó bớt khôn đấy
-        --     settings = {
-        --       basedpyright = {
-        --         analysis = {
-        --           autoSearchPaths = true,
-        --           diagnosticMode = "openFilesOnly",
-        --           useLibraryCodeForTypes = true,
-        --           typeCheckingMode = "standard", -- Hoặc 'basic' tùy bác
-        --         },
-        --       },
-        --     },
-        --   })
-        -- end,
       },
     })
   end,
