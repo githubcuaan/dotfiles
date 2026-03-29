@@ -1,3 +1,5 @@
+# zmodload zsh/zprof
+
 # ========================
 # Theme conf
 # ========================
@@ -26,9 +28,6 @@ COMPLETION_WAITING_DOTS="true"
 
 # plugins
 plugins=(git sudo history encode64 copypath zsh-autosuggestions zsh-syntax-highlighting)
-
-# Chỉnh màu gợi ý (autosuggest) cho mờ đi một tí, chuẩn vibe Nord
-ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#4c566a,underline"
 
 source $ZSH/oh-my-zsh.sh
 
@@ -62,7 +61,40 @@ alias v='nvim'
 # moving alias
 alias ..='cd ..'         # Lên thư mục cha
 alias ...='cd ../..'     # Lên 2 thư mục cha
-alias ll='ls -alF'       # Xem danh sách chi tiết (ẩn, thư mục, có dấu /)
+
+# ==================
+# function
+# ==================
+
+# Hàm biên dịch CPP, chạy và tự xoá file thực thi
+
+gocr() {
+    # 1. Kiểm tra đầu vào
+    if [ -z "$1" ]; then
+        echo " You need to add .cpp argm (ex: gocr ?.cpp)."
+        return 1
+    fi
+
+    # 2. Định nghĩa tên file output (lấy theo file đầu tiên)
+    local out="${1%.*}"
+
+    # 3. Biên dịch TẤT CẢ các file truyền vào ($@ thay vì $1)
+    echo "󰄵  Compiling..."
+    if g++ -Wall -O2 "$@" -o "$out"; then
+        echo "󰐊  Running..."
+        echo -e "--------------------------\n"
+        ./"$out"
+        echo -e "\n"
+        echo -e "--------------------------\n"
+    else
+        echo "  Error when compiling."
+    fi
+
+    # 4. LUÔN LUÔN dọn dẹp sau khi xong việc
+    if [ -f "$out" ]; then
+        rm "$out"
+    fi
+}
 
 # ========================
 #     Global env var
@@ -126,7 +158,20 @@ export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
 
-# since i using pacman / yay to install, this thing no more need
-# . "$HOME/.atuin/bin/env"
 
-eval "$(atuin init zsh)"
+
+. "$HOME/.local/share/../bin/env"
+# . "$HOME/.cargo/env"
+
+#======= pnpm ========
+export PNPM_HOME="/home/andev/.local/share/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
+
+# zprof
+# zprof
+eval "$(tv init zsh)"
+export PATH=$PATH:~/.spicetify
