@@ -27,7 +27,7 @@ vim.api.nvim_create_autocmd("LspAttach", {
     keymap.set("n", "]d", function() vim.diagnostic.jump({ count = 1, float = true }) end, opts)
 
     opts.desc = "LSP: Hover (Xem docs)"
-    keymap.set("n", "K", vim.lsp.buf.hover, opts)
+    keymap.set("n", "K", function() require("dnhfan.scripts.hover")() end, opts)
 
     opts.desc = "LSP: Restart"
     keymap.set("n", "<leader>rs", ":LspRestart<CR>", opts)
