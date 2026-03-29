@@ -14,7 +14,7 @@ vim.api.nvim_create_autocmd("LspAttach", {
     opts.desc = "LSP: Xem hành động code (Code Action)"
     -- Lưu ý: Nếu bro đã bật `ui_select = true` trong config Snacks picker,
     -- thì lệnh này sẽ TỰ ĐỘNG hiện giao diện đẹp của Snacks. Không cần đổi code.
-    keymap.set({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, opts)
+    keymap.set({ "n", "v" }, "<leader>xa", vim.lsp.buf.code_action, opts)
 
     opts.desc = "LSP: Đổi tên thông minh"
     keymap.set("n", "<leader>rn", vim.lsp.buf.rename, opts)
