@@ -1,0 +1,518 @@
+================================================================================
+                    OPENCODE.NVIM TUTORIAL
+                    AI-Powered Development for Neovim
+================================================================================
+
+Welcome to opencode.nvim! This plugin integrates AI assistance directly into
+your Neovim workflow. This tutorial covers everything you need to become
+productive with opencode.nvim.
+
+--------------------------------------------------------------------------------
+                              TABLE OF CONTENTS
+--------------------------------------------------------------------------------
+
+1. Getting Started
+2. Core Concepts
+3. Keybinding Reference
+4. Practical Examples by Keybinding
+5. Real-World Workflows
+6. Tips and Best Practices
+
+================================================================================
+                           1. GETTING STARTED
+================================================================================
+
+opencode.nvim provides several ways to interact with AI:
+
+  - ask()      - Send prompts and questions to the AI
+  - select()   - Pick and execute actions from a menu
+  - toggle()   - Open/close the main interface
+  - operator() - Send visual selections or current lines to AI
+  - command()  - Execute internal session commands
+
+The plugin integrates with snacks.nvim (optional but recommended) for
+enhanced input and picker experiences.
+
+--------------------------------------------------------------------------------
+                           2. CORE CONCEPTS
+--------------------------------------------------------------------------------
+
+@this Directive
+----------------
+The special "@this" directive tells opencode to include the current buffer
+content, selection, or line in your request. This is the key to contextual AI
+assistance.
+
+Context Preservation
+--------------------
+opencode maintains a session, so the AI remembers your previous requests and
+can reference earlier parts of a conversation. This enables:
+  - Multi-step refactoring conversations
+  - Building on previous explanations
+  - Iterative debugging sessions
+
+--------------------------------------------------------------------------------
+                        3. KEYBINDING REFERENCE
+================================================================================
+
+  <leader>ca  Ask opencode with selection (visual mode: send selection)
+  <leader>cx  Execute opencode action (opens action picker)
+  <leader>co  Toggle opencode interface
+  go          Operator: add range to opencode context
+  goo         Operator: add single line to opencode context
+  <C-up>      Scroll opencode up (session command)
+  <C-down>    Scroll opencode down (session command)
+
+================================================================================
+                    4. PRACTICAL EXAMPLES BY KEYBINDING
+================================================================================
+
+------------------------------------------------------------------------------
+                        <leader>ca - ASK WITH SELECTION
+------------------------------------------------------------------------------
+
+Purpose: Send prompts to the AI, optionally including selected code.
+
+Visual Mode Examples:
+---------------------
+
+1. REFACTOR SELECTION
+
+   Select code:
+     function calculateTotal(items)
+       local total = 0
+       for i, item in ipairs(items) do
+         total = total + item.price * item.quantity
+       end
+       return total
+     end
+
+   Press <leader>ca, type: "refactor to use table.reduce"
+
+   Result: AI suggests a functional approach using table.reduce
+
+
+2. EXPLAIN COMPLEX CODE
+
+   Select unfamiliar code, press <leader>ca, type: "explain this code"
+
+   Great for understanding:
+   - Complex regex patterns
+   - Tricky algorithms
+   - Third-party library usage
+
+
+3. ADD DOCUMENTATION
+
+   Select function, press <leader>ca, type: "add docstring explaining parameters"
+
+   AI adds:
+   - Parameter descriptions
+   - Return value documentation
+   - Usage examples
+
+
+4. FIX BUG
+
+   Select buggy code, press <leader>ca, type: "find the bug and fix it"
+
+   AI analyzes and suggests corrections with explanations
+
+
+Normal Mode Example:
+--------------------
+
+Press <leader>ca (no selection), type: "how do I parse JSON in Lua?"
+
+Uses current buffer context to provide relevant guidance.
+
+------------------------------------------------------------------------------
+                        <leader>cx - EXECUTE ACTION
+------------------------------------------------------------------------------
+
+Purpose: Opens a picker with available actions. Use after <leader>ca to
+execute what the AI suggested.
+
+Common Workflow:
+----------------
+
+1. Select code with visual mode
+2. Press <leader>ca, type a request (e.g., "convert to TypeScript")
+3. AI responds with suggestions
+4. Press <leader>cx to see available actions
+5. Select and execute an action
+
+Available Actions (examples):
+------------------------------
+
+- opencode_send    : Send response back to opencode
+- (custom actions may vary based on configuration)
+
+Tip: With snacks.nvim integration, press <A-a> to quickly send from the
+input field.
+
+------------------------------------------------------------------------------
+                        <leader>co - TOGGLE INTERFACE
+------------------------------------------------------------------------------
+
+Purpose: Opens or closes the main opencode interface window.
+
+Use Cases:
+----------
+
+1. FULL CONVERSATION VIEW
+
+   Press <leader>co to open the interface and see your entire conversation
+   history with the AI.
+
+
+2. REFERENCE PREVIOUS RESPONSES
+
+   Navigate through past questions and answers without leaving Neovim.
+
+
+3. MULTI-FILE CONTEXT
+
+   The interface can show context from multiple files in your project.
+
+
+4. REVIEW CHANGES
+
+   Before applying AI-suggested changes, review them in context.
+
+
+------------------------------------------------------------------------------
+                        go - ADD RANGE TO CONTEXT (Operator)
+------------------------------------------------------------------------------
+
+Purpose: Operator-pending mapping to add a range of lines to opencode context.
+
+Basic Usage:
+------------
+
+1. POSITION YOUR CURSOR
+
+   Move to the start line you want to include.
+
+
+2. TRIGGER OPERATOR
+
+   Type: go
+
+
+3. MOTION
+
+   Use a motion to select the range:
+   
+   - gojj   : Add current line + 2 lines below
+   - go4j   : Add current line + 4 lines below
+   - gok    : Add current line + 1 line above
+   - goG    : Add from current line to end of file
+   - gogg   : Add from beginning to current line
+
+
+4. ASK YOUR QUESTION
+
+   After the range is added, opencode prompts for your question.
+
+Example Workflow - Function Analysis:
+--------------------------------------
+
+1. Position cursor on function definition
+2. Type: goa}
+   (a} selects around the current brace block - the entire function)
+3. Type: "explain what this function does"
+
+
+------------------------------------------------------------------------------
+                        goo - ADD LINE TO CONTEXT
+------------------------------------------------------------------------------
+
+Purpose: Quickly add the current line and start a prompt.
+
+Usage:
+------
+
+1. Position cursor on the line of interest
+2. Type: goo
+3. Type your question immediately
+
+Example - Quick Variable Inspection:
+-------------------------------------
+
+1. Cursor on: local config = require("settings").load()
+2. Type: goo
+3. Type: "what does this configuration contain?"
+
+Alternative Motion Chains:
+---------------------------
+
+- gooVj : Add line, then visual select down (for multi-line context)
+
+------------------------------------------------------------------------------
+                        <C-up> / <C-down> - SCROLL SESSION
+------------------------------------------------------------------------------
+
+Purpose: Navigate through long conversations or large code snippets in
+the opencode interface.
+
+Usage:
+------
+
+- <C-up>    : Scroll session content up by half a page
+- <C-down>  : Scroll session content down by half a page
+
+These are session commands that can be customized or mapped differently.
+
+================================================================================
+                        5. REAL-WORLD WORKFLOWS
+================================================================================
+
+------------------------------------------------------------------------------
+                           WORKFLOW: CODE REVIEW
+------------------------------------------------------------------------------
+
+1. Open the file you want to review
+
+2. For each section of concern:
+   - Select the code visually
+   - Press <leader>ca
+   - Type: "review this code for issues, bugs, and improvements"
+   - Review the AI's response
+   - Press <leader>co to open interface for full context
+
+
+Example Review Session:
+-----------------------
+
+   Select: A complex conditional block
+   Ask: "are there edge cases this doesn't handle?"
+   
+   Select: An API call
+   Ask: "is error handling adequate here?"
+   
+   Select: A database query
+   Ask: "is this query vulnerable to injection?"
+
+
+------------------------------------------------------------------------------
+                         WORKFLOW: REFACTORING
+------------------------------------------------------------------------------
+
+Phase 1: Understand Current Code
+---------------------------------
+
+1. Position cursor on code block
+2. Type: goo
+3. Ask: "what does this code do in simple terms?"
+
+Phase 2: Plan Refactor
+----------------------
+
+1. Select the code
+2. Press <leader>ca
+3. Ask: "suggest a cleaner way to write this"
+
+Phase 3: Apply Changes
+-----------------------
+
+1. Let AI show you the refactored version
+2. Press <leader>cx to see actions
+3. Select apply or copy suggestion
+4. Verify in context with <leader>co
+
+
+------------------------------------------------------------------------------
+                         WORKFLOW: DEBUGGING
+------------------------------------------------------------------------------
+
+Step 1: Isolate the Problem
+---------------------------
+
+1. Select the buggy code
+2. Press <leader>ca
+3. Ask: "what could cause this to fail or return wrong results?"
+
+
+Step 2: Add Context
+--------------------
+
+1. Select surrounding context (error handling, etc.)
+2. Press <leader>ca
+3. Ask: "considering this error handling, what might be the issue?"
+
+
+Step 3: Generate Fix
+---------------------
+
+1. Select problematic code
+2. Press <leader>ca
+3. Ask: "show me a fixed version with explanation"
+
+
+Step 4: Verify Fix
+-------------------
+
+1. Apply the suggested fix
+2. Test your code
+3. If issues persist, ask follow-up questions using goo
+
+
+------------------------------------------------------------------------------
+                         WORKFLOW: LEARNING NEW CODE
+------------------------------------------------------------------------------
+
+1. EXPLORE STRUCTURE
+
+   Type: goo
+   Ask: "what is the overall structure of this file/module?"
+
+
+2. UNDERSTAND COMPONENTS
+
+   Select each major function
+   Press <leader>ca
+   Ask: "what does this function do and why is it needed?"
+
+
+3. FOLLOW THE FLOW
+
+   Select a function call chain
+   Press <leader>ca
+   Ask: "trace through what happens when this code runs"
+
+
+4. ASK ABOUT PATTERNS
+
+   Select unfamiliar syntax
+   Press <leader>ca
+   Ask: "explain this pattern/dialect/idiom"
+
+
+================================================================================
+                        6. TIPS AND BEST PRACTICES
+================================================================================
+
+------------------------------------------------------------------------------
+                            EFFECTIVE PROMPTING
+------------------------------------------------------------------------------
+
+Be Specific:
+------------
+  BAD:  "fix this"
+  GOOD: "fix the null pointer exception on line 42"
+
+Include Intent:
+---------------
+  BAD:  "improve this code"
+  GOOD: "improve performance while keeping the same API surface"
+
+Ask for Explanations:
+---------------------
+  Include "explain why" or "show reasoning" to learn from suggestions
+
+
+------------------------------------------------------------------------------
+                           CONTEXT MANAGEMENT
+------------------------------------------------------------------------------
+
+Start Broad, Then Specific:
+----------------------------
+
+1. First: "what does this file do overall?"
+2. Then: Select specific sections for detailed help
+
+
+Use Ranges Wisely:
+------------------
+
+- Include only relevant code in your selection
+- Too much context can dilute the answer
+- Too little context can miss important dependencies
+
+
+------------------------------------------------------------------------------
+                           ITERATIVE APPROACH
+------------------------------------------------------------------------------
+
+1. Start with a simple question
+2. Based on the answer, refine your next question
+3. Build toward your solution incrementally
+4. Ask for summaries if you get lost in details
+
+
+------------------------------------------------------------------------------
+                          SESSION MANAGEMENT
+------------------------------------------------------------------------------
+
+- opencode maintains conversation context
+- Use <leader>co to review what you've discussed
+- Reference earlier points in follow-up questions
+- For new topics, consider closing and reopening session
+
+
+------------------------------------------------------------------------------
+                          KEYBOARD-FRIENDLY WORKFLOW
+------------------------------------------------------------------------------
+
+Mnemonics:
+----------
+
+  ca  = "Code Assistant"
+  cx  = "eXecute action"
+  co  = "Open code"
+
+  go  = "go [send] range"
+  goo = "go [send] one line"
+
+
+------------------------------------------------------------------------------
+                          COMMON PATTERNS
+------------------------------------------------------------------------------
+
+Quick Single-Line:
+  goo → type question → Enter
+
+Visual Selection:
+  Select → <leader>ca → type question → Enter
+
+Range Selection:
+  go + motion → type question → Enter
+
+Execute Action:
+  After AI response → <leader>cx → select action
+
+Review Context:
+  <leader>co → browse conversation
+
+
+================================================================================
+                            QUICK REFERENCE CARD
+================================================================================
+
+  VISUAL MODE:
+    Select + <leader>ca  →  Ask about selection
+    Select + <leader>cx  →  Execute action on selection
+
+  NORMAL MODE:
+    <leader>ca           →  Ask opencode (no selection)
+    <leader>cx           →  Open action picker
+    <leader>co           →  Toggle interface
+    goo                  →  Add line, start question
+    go + motion          →  Add range, start question
+
+  NAVIGATION:
+    <C-up>               →  Scroll up
+    <C-down>             →  Scroll down
+
+================================================================================
+                         NEED MORE HELP?
+================================================================================
+
+- Check the opencode.nvim documentation with :help opencode
+- Review your config at: lua/dnhfan/plugins/ai/opencode-nvim.lua
+- Experiment in a test file to build muscle memory
+
+Happy coding with opencode.nvim!
+
+================================================================================
