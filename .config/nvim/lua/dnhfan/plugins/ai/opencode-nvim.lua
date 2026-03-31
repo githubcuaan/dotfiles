@@ -37,16 +37,16 @@ return {
       { desc = "Ask opencode…" })
     vim.keymap.set({ "n", "x" }, "<leader>cx", function() require("opencode").select() end,
       { desc = "Execute opencode action…" })
-    vim.keymap.set({ "n", "t" }, "<leader>co", function() require("opencode").toggle() end, { desc = "Toggle opencode" })
+    vim.keymap.set({ "n", "t" }, "<A-.>", function() require("opencode").toggle() end, { desc = "Toggle opencode" })
 
     vim.keymap.set({ "n", "x" }, "go", function() return require("opencode").operator("@this ") end,
       { desc = "Add range to opencode", expr = true })
     vim.keymap.set("n", "goo", function() return require("opencode").operator("@this ") .. "_" end,
       { desc = "Add line to opencode", expr = true })
 
-    vim.keymap.set("n", "<C-up>", function() require("opencode").command("session.half.page.up") end,
+    vim.keymap.set("n", "<A-u>", function() require("opencode").command("session.half.page.up") end,
       { desc = "Scroll opencode up" })
-    vim.keymap.set("n", "<C-down>", function() require("opencode").command("session.half.page.down") end,
+    vim.keymap.set("n", "<A-d>", function() require("opencode").command("session.half.page.down") end,
       { desc = "Scroll opencode down" })
   end,
 }
