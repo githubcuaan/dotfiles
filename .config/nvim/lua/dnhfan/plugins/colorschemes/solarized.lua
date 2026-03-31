@@ -8,7 +8,6 @@ return vim.b.colorscheme ~= "solarized" and {} or {
     vim.o.termguicolors = true
     vim.o.background = 'dark'
     require('solarized').setup(opts)
-    vim.cmd.colorscheme 'solarized'
 
     -- default config
     require('solarized').setup({
