@@ -16,3 +16,6 @@ keymap.set({ "n", "v" }, "B", "^", {
 keymap.set("i", "jk", "<ESC>", { desc = "Exit insert mode with jk" })
 
 keymap.set("n", "<leader>ch", ":nohl<CR>", { desc = "Clear search highlights" })
+
+keymap.set('n', '+', '<C-a>', { desc = "Increase Sequence" })
+keymap.set('n', '-', '<C-x>', { desc = "Decrease Sequence" })
