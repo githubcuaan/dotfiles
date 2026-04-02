@@ -4,20 +4,9 @@
 # Theme conf
 # ========================
 
-# powerlevel10k:
-# if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-#   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-# fi
-
-# If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH
 
 # Path to your Oh My Zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
-
-# ZSH_THEME="powerlevel10k/powerlevel10k"
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-# [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 # brew
 # eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)" 
@@ -34,6 +23,11 @@ source $ZSH/oh-my-zsh.sh
 # ========================
 # User configuration
 # ========================
+
+# --- Vi mode ---
+bindkey -v
+export KEYTIMEOUT=15
+bindkey -M viins 'jk' vi-cmd-mode
 
 # Preferred editor for local and remote sessions
 if [[ -n $SSH_CONNECTION ]]; then
@@ -95,6 +89,24 @@ gocr() {
         rm "$out"
     fi
 }
+
+# --- Cursor config ---
+# 1. Đổi cursor khi chuyển qua lại giữa Insert và Normal
+function zle-keymap-select {
+    if [[ ${KEYMAP} == vicmd ]]; then
+        echo -ne '\e[1 q' # Block
+    else
+        echo -ne '\e[5 q' # Line
+    fi
+}
+zle -N zle-keymap-select
+
+# 2. Bắt buộc về dạng Line khi vừa mở prompt mới (Fix lỗi Neovim)
+function zle-line-init {
+    zle-keymap-select # Tự động gọi lại hàm trên để check mode cho chắc cú
+}
+zle -N zle-line-init
+
 
 # ========================
 #     Global env var
@@ -173,5 +185,3 @@ esac
 
 # zprof
 # zprof
-eval "$(tv init zsh)"
-export PATH=$PATH:~/.spicetify
