@@ -27,7 +27,7 @@ return {
           require("lspconfig.ui.windows").default_options.border = require("dnhfan.core.utils").border
 
           -- NOTE: Disabled LSP generate logging file
-          vim.lsp.set_log_level("off")
+          vim.lsp.log.set_level("off")
 
           -- NOTE: Diagnostic Sign
           vim.diagnostic.config({
