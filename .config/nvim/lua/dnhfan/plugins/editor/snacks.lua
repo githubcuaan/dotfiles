@@ -36,7 +36,8 @@ return {
     scope = { enabled = true },
     scroll = { enabled = true },
     words = { enabled = true },
-    notifier = { enabled = false },
+    notifier = { enabled = true },
+    image = { enabled = true },
   },
 
   keys = {
