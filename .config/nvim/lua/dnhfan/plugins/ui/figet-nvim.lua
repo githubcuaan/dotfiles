@@ -6,9 +6,9 @@ return {
   config = function()
     require("fidget").setup({
       progress = {
-        poll_rate = 0, -- How and when to poll for progress messages
-        suppress_on_insert = true, -- Suppress new messages while in insert mode
-        ignore_done_already = false, -- Ignore new tasks that are already complete
+        poll_rate = 0,                -- How and when to poll for progress messages
+        suppress_on_insert = true,    -- Suppress new messages while in insert mode
+        ignore_done_already = false,  -- Ignore new tasks that are already complete
         ignore_empty_message = false, -- Ignore new tasks that don't contain a message
         -- Clear notification group when LSP server detaches
         clear_on_detach = function(client_id)
@@ -23,19 +23,19 @@ return {
 
         -- Options related to how LSP progress messages are displayed as notifications
         display = {
-          render_limit = 16, -- How many LSP messages to show at once
-          done_ttl = 3, -- How long a message should persist after completion
+          render_limit = 16,                                           -- How many LSP messages to show at once
+          done_ttl = 3,                                                -- How long a message should persist after completion
           done_icon = require("dnhfan.core.utils").sign_icons.success, -- Icon shown when all LSP progress tasks are complete
-          done_style = "Constant", -- Highlight group for completed LSP tasks
-          progress_ttl = math.huge, -- How long a message should persist when in progress
-          progress_icon = { "dots" }, -- Icon shown when LSP progress tasks are in progress
+          done_style = "Constant",                                     -- Highlight group for completed LSP tasks
+          progress_ttl = math.huge,                                    -- How long a message should persist when in progress
+          progress_icon = { "dots" },                                  -- Icon shown when LSP progress tasks are in progress
           -- progress_icon = { pattern = "clock", period = 2 },             -- Icon shown when LSP progress tasks are in progress
           -- Highlight group for in-progress LSP tasks
           progress_style = "WarningMsg",
-          group_style = "Title", -- Highlight group for group name (LSP server name)
+          group_style = "Title",   -- Highlight group for group name (LSP server name)
           icon_style = "Question", -- Highlight group for group icons
-          priority = 30, -- Ordering priority for LSP notification group
-          skip_history = true, -- Whether progress notifications should be omitted from history
+          priority = 30,           -- Ordering priority for LSP notification group
+          skip_history = true,     -- Whether progress notifications should be omitted from history
           -- How to format a progress message
           format_message = require("fidget.progress.display").default_format_message,
           -- How to format a progress annotation
@@ -54,16 +54,16 @@ return {
         -- Options related to Neovim's built-in LSP client
         lsp = {
           progress_ringbuf_size = 0, -- Configure the nvim's LSP progress ring buffer size
-          log_handler = false, -- Log `$/progress` handler invocations (for debugging)
+          log_handler = false,       -- Log `$/progress` handler invocations (for debugging)
         },
       },
 
       -- Options related to notification subsystem
       notification = {
-        poll_rate = 10, -- How frequently to update and render notifications
+        poll_rate = 10,                -- How frequently to update and render notifications
         filter = vim.log.levels.TRACE, -- Minimum notifications level
-        history_size = 128, -- Number of removed messages to retain in history
-        override_vim_notify = true, -- Automatically override vim.notify() with Fidget
+        history_size = 128,            -- Number of removed messages to retain in history
+        override_vim_notify = true,    -- Automatically override vim.notify() with Fidget
         -- How to configure notification groups when instantiated
         configs = { default = require("fidget.notification").default_config },
         -- Conditionally redirect notifications to another backend
@@ -75,8 +75,8 @@ return {
 
         -- Options related to how notifications are rendered as text
         view = {
-          stack_upwards = true, -- Display notification items from bottom to top
-          icon_separator = " ", -- Separator between group name and icon
+          stack_upwards = true,    -- Display notification items from bottom to top
+          icon_separator = " ",    -- Separator between group name and icon
           group_separator = "---", -- Separator between notification groups
           group_separator_hl = "NormalFloat",
           -- How to render notification messages
@@ -87,36 +87,27 @@ return {
 
         -- Options related to the notification window and buffer
         window = {
-          normal_hl = "Normal", -- Base highlight group in the notification window
-          winblend = 0, -- Background color opacity in the notification window
+          normal_hl = "Comment",                        -- Base highlight group in the notification window
+          winblend = 0,                                 -- Background color opacity in the notification window
           border = require("dnhfan.core.utils").border, -- Border around the notification window
-          border_hl = "FloatBorder", -- Highlight group for border
-          zindex = 45, -- Stacking priority of the notification window
-          max_width = 0, -- Maximum width of the notification window (30% of editor width)
-          max_height = 10, -- Maximum height of the notification window
-          x_padding = 1, -- Padding from right edge of window boundary
-          y_padding = 1, -- Padding from bottom edge of window boundary
-          align = "bottom", -- How to align the notification window
-          relative = "editor", -- What the notification window position is relative to
+          border_hl = "FloatBorder",                    -- Highlight group for border
+          zindex = 45,                                  -- Stacking priority of the notification window
+          max_width = 0,                                -- Maximum width of the notification window (30% of editor width)
+          max_height = 10,                              -- Maximum height of the notification window
+          x_padding = 1,                                -- Padding from right edge of window boundary
+          y_padding = 1,                                -- Padding from bottom edge of window boundary
+          align = "bottom",                             -- How to align the notification window
+          relative = "editor",                          -- What the notification window position is relative to
           tabstop = 8,
-        },
-      },
-
-      -- Options related to integrating with other plugins
-      integration = {
-        ["nvim-tree"] = {
-          enable = true, -- Integrate with nvim-tree/nvim-tree.lua (if installed)
-        },
-        ["xcodebuild-nvim"] = {
-          enable = true, -- Integrate with wojciech-kulik/xcodebuild.nvim (if installed)
+          avoid = { "NvimTree", "TestExplorer" }
         },
       },
 
       -- Options related to logging
       logger = {
         level = vim.log.levels.OFF, -- Minimum logging level
-        max_size = 0, -- Maximum log file size, in KB
-        float_precision = 0.01, -- Limit the number of decimals displayed for floats
+        max_size = 0,               -- Maximum log file size, in KB
+        float_precision = 0.01,     -- Limit the number of decimals displayed for floats
         -- Where Fidget writes its logs to
         path = string.format("%s/fidget.nvim.log", vim.fn.stdpath("cache")),
       },
