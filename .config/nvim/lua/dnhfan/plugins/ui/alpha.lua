@@ -1,43 +1,43 @@
 -- Neovim home page
 
 return {
-  "goolord/alpha-nvim",
-  event = "VimEnter",
-  config = function()
-    local alpha = require("alpha")
-    local dashboard = require("alpha.themes.dashboard")
-
-    -- Set header
-    dashboard.section.header.val = {
-      "                                                     ",
-      "                                                     ",
-      "                                                     ",
-      "                                                     ",
-      "                                                     ",
-      "  ███╗   ██╗███████╗ ██████╗ ██╗   ██╗██╗███╗   ███╗ ",
-      "  ████╗  ██║██╔════╝██╔═══██╗██║   ██║██║████╗ ████║ ",
-      "  ██╔██╗ ██║█████╗  ██║   ██║██║   ██║██║██╔████╔██║ ",
-      "  ██║╚██╗██║██╔══╝  ██║   ██║╚██╗ ██╔╝██║██║╚██╔╝██║ ",
-      "  ██║ ╚████║███████╗╚██████╔╝ ╚████╔╝ ██║██║ ╚═╝ ██║ ",
-      "  ╚═╝  ╚═══╝╚══════╝ ╚═════╝   ╚═══╝  ╚═╝╚═╝     ╚═╝ ",
-      "                                                     ",
-    }
-
-    -- Set menu
-    dashboard.section.buttons.val = {
-      dashboard.button("e", "  > New File", "<cmd>ene<CR>"),
-      dashboard.button("󱁐 e", "  > Toggle file explorer", "<cmd>lua Snacks.explorer() <CR>"),
-      dashboard.button("󱁐 ff", "󰱼 > Find File", "<cmd>lua Snacks.picker.files()<CR>"),
-      dashboard.button("󱁐 fs", "  > Find Word", "<cmd>lua Snacks.picker.grep()<CR>"),
-      dashboard.button("󱁐 fr", "  > Recent Files", "<cmd>lua Snacks.picker.recent()<CR>"),
-      dashboard.button("󱁐 qr", "󰁯  > Restore Session For Current Directory", "<cmd>AutoSession restore<CR>"),
-      dashboard.button("󱁐 qq", " > Quit NVIM", "<cmd>qa<CR>"),
-    }
-
-    -- Send config to alpha
-    alpha.setup(dashboard.opts)
-
-    -- Disable folding on alpha buffer
-    vim.cmd([[autocmd FileType alpha setlocal nofoldenable]])
-  end,
+  -- "goolord/alpha-nvim",
+  -- event = "VimEnter",
+  -- config = function()
+  --   local alpha = require("alpha")
+  --   local dashboard = require("alpha.themes.dashboard")
+  --
+  --   -- Set header
+  --   dashboard.section.header.val = {
+  --     "                                                     ",
+  --     "                                                     ",
+  --     "                                                     ",
+  --     "                                                     ",
+  --     "                                                     ",
+  --     "  ███╗   ██╗███████╗ ██████╗ ██╗   ██╗██╗███╗   ███╗ ",
+  --     "  ████╗  ██║██╔════╝██╔═══██╗██║   ██║██║████╗ ████║ ",
+  --     "  ██╔██╗ ██║█████╗  ██║   ██║██║   ██║██║██╔████╔██║ ",
+  --     "  ██║╚██╗██║██╔══╝  ██║   ██║╚██╗ ██╔╝██║██║╚██╔╝██║ ",
+  --     "  ██║ ╚████║███████╗╚██████╔╝ ╚████╔╝ ██║██║ ╚═╝ ██║ ",
+  --     "  ╚═╝  ╚═══╝╚══════╝ ╚═════╝   ╚═══╝  ╚═╝╚═╝     ╚═╝ ",
+  --     "                                                     ",
+  --   }
+  --
+  --   -- Set menu
+  --   dashboard.section.buttons.val = {
+  --     dashboard.button("e", "  > New File", "<cmd>ene<CR>"),
+  --     dashboard.button("󱁐 e", "  > Toggle file explorer", "<cmd>lua Snacks.explorer() <CR>"),
+  --     dashboard.button("󱁐 ff", "󰱼 > Find File", "<cmd>lua Snacks.picker.files()<CR>"),
+  --     dashboard.button("󱁐 fs", "  > Find Word", "<cmd>lua Snacks.picker.grep()<CR>"),
+  --     dashboard.button("󱁐 fr", "  > Recent Files", "<cmd>lua Snacks.picker.recent()<CR>"),
+  --     dashboard.button("󱁐 qr", "󰁯  > Restore Session For Current Directory", "<cmd>AutoSession restore<CR>"),
+  --     dashboard.button("󱁐 qq", " > Quit NVIM", "<cmd>qa<CR>"),
+  --   }
+  --
+  --   -- Send config to alpha
+  --   alpha.setup(dashboard.opts)
+  --
+  --   -- Disable folding on alpha buffer
+  --   vim.cmd([[autocmd FileType alpha setlocal nofoldenable]])
+  -- end,
 }

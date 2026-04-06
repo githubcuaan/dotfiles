@@ -1,5 +1,4 @@
 -- Fidget: A minimalist LSP progress UI for Neovim
-
 return {
   "j-hui/fidget.nvim",
   event = "VeryLazy",

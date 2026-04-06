@@ -49,7 +49,7 @@ return {
             text = "󰙅 Snacks Explorer",
             text_align = "center",
             separator = true,
-            padding = 1,
+            -- padding = 1,
           }
         },
 
