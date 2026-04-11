@@ -22,7 +22,7 @@ return {
       foldsep = " ", -- Cột ngăn cách
       foldclose = "", -- Icon đóng
       -- this only have in neovim nightly
-      -- foldinner = " ",
+      foldinner = " ",
     }
     -- Config phím tắt
     local keymap = vim.keymap.set
@@ -32,7 +32,7 @@ return {
     local handler = function(virtText, lnum, endLnum, width, truncate)
       local newVirtText = {}
 
-      local suffix = (" ⋯  %d lines "):format(endLnum - lnum)
+      local suffix = ("   %d lines "):format(endLnum - lnum)
       local padding = " "
 
       local sufWidth = vim.fn.strdisplaywidth(suffix)
