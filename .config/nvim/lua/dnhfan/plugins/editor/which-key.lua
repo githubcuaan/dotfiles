@@ -94,8 +94,7 @@ return {
       table.insert(buffer_mappings, {
         "<leader>b" .. i,
         function() require("bufferline").go_to(i, true) end,
-        desc = "Buffer " .. i,
-        icon = " ", -- Icon số tương ứng cho "màu mè"
+        hidden = true
       })
     end
 
