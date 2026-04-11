@@ -12,7 +12,7 @@ local opt = vim.opt
 -- opt.foldexpr = "nvim_treesitter#foldexpr()"
 
 -- Bật chế độ xuống dòng mềm (chỉ hiển thị xuống dòng, không thêm ký tự enter thật)
-opt.wrap = false
+opt.wrap = true
 
 -- Ngắt dòng theo từ (để không bị chặt đôi chữ cái khi xuống dòng)
 opt.linebreak = true
