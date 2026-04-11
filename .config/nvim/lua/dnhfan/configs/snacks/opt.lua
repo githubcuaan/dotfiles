@@ -32,7 +32,7 @@ return {
   scroll = { enabled = true },
   words = { enabled = false },
   notifier = { enabled = true },
-  image = { enabled = true },
+  image = { enabled = false },
   dashboard = {
     enabled = true
   }
