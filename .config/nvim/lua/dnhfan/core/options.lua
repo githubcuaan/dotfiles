@@ -69,3 +69,5 @@ vim.opt.sessionoptions =
 { "blank", "buffers", "curdir", "folds", "help", "tabpages", "winsize", "winpos", "terminal", "localoptions" }
 
 vim.opt.mousemoveevent = true
+
+vim.g.ai_cmp = true

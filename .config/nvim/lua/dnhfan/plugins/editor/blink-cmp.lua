@@ -35,6 +35,7 @@ return {
           })
         end,
       },
+      { "giuxtaposition/blink-cmp-copilot" },
     },
     version = "*",
     opts = {
@@ -58,8 +59,8 @@ return {
         ["<S-Tab>"] = { "snippet_backward", "fallback" },
 
         ["<C-y>"] = { "select_and_accept", "fallback" },
-        ["<C-j>"] = { "select_next", "fallback" },
-        ["<C-k>"] = { "select_prev", "fallback" },
+        ["<C-n>"] = { "select_next", "fallback" },
+        ["<C-p>"] = { "select_prev", "fallback" },
         ["<C-space>"] = { "show", "show_documentation", "hide_documentation" },
         ["<C-e>"] = { "hide" },
         ["<C-d>"] = { "scroll_documentation_down" },
@@ -228,11 +229,18 @@ return {
           "snippets",
           "path",
           "buffer",
+          "copilot",
         },
         providers = {
           lsp = { name = "LSP" },
           snippets = { name = "snippets" },
           path = { name = "path" },
+          copilot = {
+            name = "copilot",
+            module = "blink-cmp-copilot",
+            score_offset = 100,
+            async = true,
+          },
           cmdline = {},
           buffer = {
             name = "buffer",
