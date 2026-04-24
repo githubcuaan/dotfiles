@@ -12,12 +12,14 @@ return vim.b.colorscheme ~= "nord" and {}
           errors = { mode = "bg" },
           search = { theme = "vim" },
           styles = {
-            comments = { italic = true },
-            keywords = {},
-            functions = {},
-            variables = {},
+            comments = { italic = true }, -- Phân biệt rạch ròi với code thực thi
+            keywords = { italic = true }, -- Nhấn mạnh các từ khóa điều hướng (if, else, return, import) giúp quét logic nhanh hơn
+            functions = { bold = true },  -- Tên hàm là trọng tâm của file, in đậm giúp dễ dàng định vị các block xử lý
+            variables = {},               -- Để mặc định (không in đậm/nghiêng) để code gọn gàng, sạch sẽ
+
+            -- Các thành phần UI
             bufferline = {
-              current = {},
+              current = { bold = true }, -- In đậm tên tab hiện tại để biết mình đang ở file nào
               modified = { italic = true },
             },
             lualine_bold = false,
