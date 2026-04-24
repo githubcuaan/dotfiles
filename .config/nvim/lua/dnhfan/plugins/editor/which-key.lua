@@ -75,7 +75,7 @@ return {
           icon = "󰓩 ",
           { "<leader><tab>o", "<cmd>tabnew<cr>", desc = "New Tab", icon = "󰝒 " },
           { "<leader><tab>x", "<cmd>tabclose<cr>", desc = "Close Tab", icon = "󰅖 " },
-          { "<leader><tab>n", "<cmd>tabnext<cr>", desc = "Next Tab", icon = "󰙫 " },
+          { "<leader><tab>n", "<cmd>tabnext<cr>", desc = "Next Tab", icon = "󰙡 " },
           { "<leader><tab>p", "<cmd>tabprevious<cr>", desc = "Prev Tab", icon = "󰙣 " },
           { "<leader><tab>f", "<cmd>tabfirst<cr>", desc = "First Tab" },
           { "<leader><tab>l", "<cmd>tablast<cr>", desc = "Last Tab" },
@@ -106,7 +106,7 @@ return {
         function()
           vim.cmd("tabn" .. i)
         end,
-        desc = "Goto tab " .. i
+        hidden = true
       })
     end
 
