@@ -15,7 +15,7 @@ export ZSH="$HOME/.oh-my-zsh"
 
 COMPLETION_WAITING_DOTS="true"
 
-ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#8b98b1"
+# ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#8b98b1"
 
 # plugins
 plugins=(git sudo history encode64 copypath zsh-autosuggestions zsh-syntax-highlighting)
@@ -64,7 +64,7 @@ alias ...='cd ../..'     # Lên 2 thư mục cha
 
 # Wallpaper
 valley() {
-  /home/andev/.local/share/caelestia/hypr/scripts/valley.sh
+/home/andev/.config/caelestia/scripts/valley.sh
 }
 
 # Hàm biên dịch CPP, chạy và tự xoá file thực thi
