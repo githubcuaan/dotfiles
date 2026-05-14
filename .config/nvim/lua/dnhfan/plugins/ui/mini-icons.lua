@@ -3,34 +3,39 @@ return {
   lazy = true,
   opts = {
     file = {
-      [".keep"]               = { glyph = "󰊢", hl = "MiniIconsGrey" },
-      ["devcontainer.json"]   = { glyph = "", hl = "MiniIconsAzure" },
+      [".keep"]                = { glyph = "󰊢", hl = "MiniIconsGrey" },
+      ["devcontainer.json"]    = { glyph = "", hl = "MiniIconsAzure" },
 
       -- Khai báo Docker ở đây
-      ["Dockerfile"]          = { glyph = "", hl = "MiniIconsBlue" },
-      ["docker-compose.yml"]  = { glyph = "", hl = "MiniIconsBlue" },
-      ["docker-compose.yaml"] = { glyph = "", hl = "MiniIconsBlue" },
+      ["Dockerfile"]           = { glyph = "", hl = "MiniIconsBlue" },
+      ["docker-compose.yml"]   = { glyph = "", hl = "MiniIconsBlue" },
+      ["docker-compose.yaml"]  = { glyph = "", hl = "MiniIconsBlue" },
+      ["compose.yml"]          = { glyph = "", hl = "MiniIconsBlue" },
+      ["compose.override.yml"] = { glyph = "", hl = "MiniIconsBlue" },
 
-      ["yarn.lock"]           = { glyph = "", hl = "MiniIconsBlue" },
+      ["yarn.lock"]            = { glyph = "", hl = "MiniIconsBlue" },
 
-      [".env"]                = { glyph = "", hl = "MiniIconsYellow" },
+      [".env"]                 = { glyph = "", hl = "MiniIconsYellow" },
 
       -- Icon con thỏ cho file config
-      ["rabbitmq.conf"]       = { glyph = "", hl = "MiniIconsOrange" },
-      ["rabbitmq-env.conf"]   = { glyph = "", hl = "MiniIconsOrange" },
-      ["enabled_plugins"]     = { glyph = "", hl = "MiniIconsOrange" }, -- File plugin của RabbitMQ
+      ["rabbitmq.conf"]        = { glyph = "", hl = "MiniIconsOrange" },
+      ["rabbitmq-env.conf"]    = { glyph = "", hl = "MiniIconsOrange" },
+      ["enabled_plugins"]      = { glyph = "", hl = "MiniIconsOrange" }, -- File plugin của RabbitMQ
     },
     filetype = {
       dotenv = { glyph = "", hl = "MiniIconsYellow" },
     },
     extension = {
-      ["sh"]      = { glyph = "", hl = "MiniIconsGrey" },
-      ["bash"]    = { glyph = "", hl = "MiniIconsGreen" },
-      ["zsh"]     = { glyph = "", hl = "MiniIconsGreen" },
+      ["sh"]       = { glyph = "", hl = "MiniIconsGrey" },
+      ["bash"]     = { glyph = "", hl = "MiniIconsGreen" },
+      ["zsh"]      = { glyph = "", hl = "MiniIconsGreen" },
 
-      ["command"] = { glyph = "", hl = "MiniIconsGrey" },
+      ["command"]  = { glyph = "", hl = "MiniIconsGrey" },
+
+      ["puml"]     = { glyph = "", hl = "MiniIconsAzure" },
+      ["uml"]      = { glyph = "", hl = "MiniIconsAzure" },
+      ["plantuml"] = { glyph = "", hl = "MiniIconsAzure" },
     },
-
   },
   init = function()
     package.preload["nvim-web-devicons"] = function()
