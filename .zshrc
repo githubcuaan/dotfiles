@@ -71,30 +71,27 @@ valley() {
 
 gocr() {
     # 1. Kiểm tra đầu vào
-    if [ -z "$1" ]; then
-        echo " You need to add .cpp argm (ex: gocr ?.cpp)."
+    if [[ $# -eq 0 ]]; then
+        echo -e "\e[31m You need to add .cpp argm (ex: gocr main.cpp).\e[0m"
         return 1
     fi
 
-    # 2. Định nghĩa tên file output (lấy theo file đầu tiên)
+    # 2. Định nghĩa tên file output
     local out="${1%.*}"
 
-    # 3. Biên dịch TẤT CẢ các file truyền vào ($@ thay vì $1)
-    echo "󰄵  Compiling..."
+    # 3. Biên dịch
+    echo -e "\e[34m󰄵  Compiling...\e[0m"
     if g++ -Wall -O2 "$@" -o "$out"; then
-        echo "󰐊  Running..."
-        echo -e "--------------------------\n"
+        echo -e "\e[32m󰐊  Running...\e[0m\n"
         ./"$out"
-        echo -e "\n"
-        echo -e "--------------------------\n"
     else
-        echo "  Error when compiling."
+        echo -e "\e[31m  Error when compiling.\e[0m"
+        # Cần return 1 để dừng script nếu biên dịch lỗi
+        return 1 
     fi
 
     # 4. LUÔN LUÔN dọn dẹp sau khi xong việc
-    if [ -f "$out" ]; then
-        rm "$out"
-    fi
+    rm -f "$out"
 }
 
 # --- Cursor config ---
