@@ -92,7 +92,7 @@ return {
     local buffer_mappings = {}
     for i = 1, 9 do
       table.insert(buffer_mappings, {
-        "<leader>b" .. i,
+        "<leader>" .. i,
         function() require("bufferline").go_to(i, true) end,
         hidden = true
       })
