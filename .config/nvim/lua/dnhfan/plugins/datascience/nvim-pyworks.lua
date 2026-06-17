@@ -3,11 +3,13 @@ return {
     "jeryldev/pyworks.nvim",
     dependencies = {
       "benlubas/molten-nvim", -- Bộ não chạy code
-      "3rd/image.nvim",       -- Đôi mắt hiển thị ảnh
     },
     lazy = false,
     priority = 100,
     config = function()
+      -- Force image.nvim to init before pyworks' ensure_dependencies() can override it
+      pcall(require, "image")
+
       require("pyworks").setup({
         -- 1. Cấu hình Python & venv (Trái tim dự án)
         python = {
@@ -42,7 +44,7 @@ return {
         -- 5. Giữ nguyên mặc định để pyworks tự lo các plugin đi kèm
         skip_molten = false,
         skip_jupytext = false,
-        skip_image = false,
+        skip_image = true,
         skip_keymaps = false,
       })
       ---------------------------------------------------------
@@ -64,6 +66,19 @@ return {
       -- MOLTEN CONFIG
       -----------------------------------------------------------
       vim.g.molten_virt_text_output_max_height = 30
+
+      -- ensure_dependencies() in dependencies.lua ALWAYS calls img.setup() with limited
+      -- settings because its check() uses img.state (private local => always nil).
+      -- Re-apply user's opts from nvim-image.lua after pyworks' deferred override runs.
+      vim.defer_fn(function()
+        pcall(function()
+          local lazy = require("lazy.core.config")
+          local plugin = lazy.plugins["image.nvim"]
+          if plugin and plugin.opts then
+            require("image").setup(plugin.opts)
+          end
+        end)
+      end, 200)
     end,
   },
 }
