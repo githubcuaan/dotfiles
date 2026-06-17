@@ -278,7 +278,8 @@ U.lsp_servers = {
   "dockerls",                        -- docker
   "docker_compose_language_service", -- docker-compose
   "angularls",                       -- angular
-  "eslint",                          -- eslint
+  -- "eslint",                          -- eslint
+  "oxlint",
   -- "vuels"
   "svelte",
   "graphql",
@@ -293,10 +294,12 @@ U.lsp_servers = {
 
 --NOTE: lsp formatters
 U.lsp_formatters = {
-  "prettier", -- prettier formatter
+  -- "prettier", -- prettier formatter
+  "oxfmt",
+
   -- "stylua", -- lua formatter
-  "isort",    -- python formatter
-  "black",    -- python formatter
+  "isort", -- python formatter
+  "black", -- python formatter
   "pylint",
   "eslint_d",
   "blade-formatter",
