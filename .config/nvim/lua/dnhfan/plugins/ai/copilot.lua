@@ -21,4 +21,25 @@ return {
       yaml = true,
     },
   },
+  config = function(_, opts)
+    local copilot = require("copilot")
+    copilot.setup(opts)
+
+    local command = require("copilot.command")
+    command.disable()
+
+    local is_enabled = false
+
+    vim.keymap.set("n", "<leader>ct", function()
+      if is_enabled then
+        command.disable()
+        is_enabled = false
+        vim.notify("󱚧  Copilot Disabled", vim.log.levels.INFO, { title = "Copilot" })
+      else
+        command.enable()
+        is_enabled = true
+        vim.notify("󰚩  Copilot Enabled", vim.log.levels.INFO, { title = "Copilot" })
+      end
+    end, { desc = "Toggle Copilot Service" })
+  end,
 }
