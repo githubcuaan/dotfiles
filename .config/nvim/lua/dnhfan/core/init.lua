@@ -12,7 +12,7 @@ vim.b.thick_win_separator = false
 vim.b.float_window_brightness = 0
 vim.opt.equalalways = false
 
-vim.opt.background = "dark"
+-- vim.opt.background = "dark" -- set dynamically by dnhfan.core.dark-mode
 vim.b.better_cmp_cursor_line = false
 vim.b.colorscheme = ""
 vim.b.syn_sidebar_with_normal = false
