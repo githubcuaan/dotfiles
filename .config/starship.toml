@@ -1,0 +1,268 @@
+# version: 1.0.0
+
+add_newline = true
+continuation_prompt = "[▸▹ ](dimmed white)"
+
+# Layout 2 dòng cực chuyên nghiệp
+format = """
+$directory$git_branch$git_status$git_metrics$php$c$elixir$elm$golang$haskell$java$julia$lua$nim$nodejs$python$ruby$rust$swift$dart$deno$conda$buf$spack$docker_context$package$fill$battery$time
+$cmd_duration$hostname$localip$jobs$sudo$username$character"""
+
+# Phía bên phải chỉ để những thứ thực sự cần "liếc" nhanh
+right_format = """$status$container$nix_shell"""
+
+[fill]
+symbol = " " # Dùng khoảng trắng để đẩy giờ giấc sang góc phải dòng 1
+
+[character]
+format = "$symbol "
+success_symbol = "[󰈺 ](bold green)"
+error_symbol = "[󰈺 ](bold red)"
+
+# Vim mode nhìn cho bén nè
+vimcmd_symbol = "[󰘳 ](bold bright-cyan)"
+vimcmd_visual_symbol = "[󰘳 ](bold bright-purple)"
+vimcmd_replace_one_symbol = "[󰘳 ](bold bright-yellow)"
+vimcmd_replace_symbol = "[󰘳 ](bold bright-yellow)"
+
+[username]
+style_user = "bold italic bright-yellow"
+style_root = "bold italic red"
+format = "[󰀉 $user]($style) " # Icon User nhìn hiện đại hơn cái vòng tròn
+disabled = false
+show_always = false # Chỉ hiện khi SSH hoặc dùng sudo, quá gọn!
+
+[sudo]
+symbol = "󰌆 " # Icon cái chìa khóa/khóa nhìn phát biết quyền Root luôn
+style = "bold bright-purple"
+format = "[$symbol]($style)"
+disabled = false
+
+[env_var.VIMSHELL]
+format = "[$env_value]($style)"
+style = 'green italic'
+
+
+[directory]
+home_symbol = "  " 
+read_only = " 󰌾"
+style = "bold cyan"
+truncation_length = 3 
+truncation_symbol = "…/"
+format = "[$path]($style)[$read_only]($style) "
+# Phần này dành cho mấy ông thần làm việc trong Git repo nè
+repo_root_style = "bold bright-blue"
+repo_root_format = "[$before_root_path]($style)[$repo_root]($repo_root_style)[$path]($style)[$read_only]($style) 󰊢 "
+
+[status]
+style = "bold red"
+symbol = "󰚌 "
+success_symbol = "[󰄬 ](bold green)"
+format = "[$symbol$int]($style)"
+disabled = false
+
+[cmd_duration]
+min_time = 2_000  # Chỉ hiện khi lệnh chạy trên 2 giây, đỡ bị rác mắt
+format = "[󱎫 $duration ]($style)"
+style = "italic dimmed yellow" # Màu vàng mờ nhìn rất nghệ và không bị chói
+
+[jobs]
+symbol = "󱖏 " # Icon này nhìn giống các tác vụ đang chạy ngầm hơn
+style = "bold bright-blue"
+format = "[$symbol$number]($style) "
+number_threshold = 1 # Chỉ hiện khi có từ 1 job trở lên
+
+[localip]
+ssh_only = true
+format = "󱦂 [$localipv4](bold magenta) " # Icon địa chỉ IP nhìn "chuyên gia" hơn hẳn
+disabled = false
+
+[time]
+disabled = false
+format = "[󱑒 $time]($style)"
+time_format = "%R"
+utc_time_offset = "local"
+style = "italic dimmed white"
+
+[battery]
+full_symbol = "󰁹 "
+charging_symbol = "󱐋 "
+discharging_symbol = "󰂂 "
+unknown_symbol = "󰂑 "
+empty_symbol = "󰂎 "
+format = "[$symbol$percentage]($style) "
+
+[[battery.display]]
+threshold = 20
+style = "bold red" # Pin yếu là phải đỏ chót để còn biết đường cắm sạc
+charging_symbol = "󰢟 "
+
+[[battery.display]]
+threshold = 50
+style = "bright-yellow" # Tầm trung thì để màu vàng cho dịu mắt
+charging_symbol = "󰂈 "
+
+[[battery.display]]
+threshold = 100
+style = "bright-green" # Pin đầy hoặc còn nhiều thì xanh mướt cho yên tâm
+charging_symbol = "󰂄 "
+
+[git_branch]
+symbol = " " # Dùng icon này nhìn hiện đại hơn nè
+style = "bold bright-blue"
+format = "[$symbol$branch ]($style) " # Bỏ bớt remote cho đỡ rối, khi nào cần mới hiện
+truncation_length = 8 # Ngắn gọn là chân á
+ignore_branches = ["main", "master"]
+
+[git_status]
+style = "bright-blue"
+# Format bọc trong ngoặc vuông thường, style ăn thẳng vào biến
+format = "([$all_status$ahead_behind]($style) )"
+
+# Đồng bộ hết khoảng trắng ra đằng sau cho đều tăm tắp
+conflicted = "󰞇 "
+ahead = "⇡${count} "
+behind = "⇣${count} "
+diverged = "󰹹 ⇡${ahead_count}⇣${behind_count} "
+untracked = "󰇘 "
+stashed = "󰏗 "
+modified = "󰷉 "
+staged = "󰐕${count} "
+renamed = "󰑕 "
+deleted = "󰆴 "
+
+[git_metrics]
+# Metrics thì nên để nhỏ xinh, tinh tế thôi không chiếm diện tích
+format = '([| ](dimmed white)[+$added]($added_style))([-$deleted]($deleted_style)) '
+added_style = 'dimmed green'
+deleted_style = 'dimmed red'
+disabled = false
+
+[deno]
+format = " [∫ $version](green bold)"
+version_format = "${raw}"
+
+[lua]
+format = " [${symbol}${version}]($style)"
+version_format = "${raw}"
+symbol = " "
+style = "bold bright-yellow"
+
+[nodejs]
+format = " [󰎙 ($version)](bold bright-green)"
+version_format = "${raw}"
+detect_files = ["package-lock.json", "yarn.lock"]
+detect_folders = ["node_modules"]
+detect_extensions = []
+
+[python]
+format = " ${symbol}[${version}]($style)[( \\($virtualenv\\))](bold bright-green)"
+symbol = "[ ](bold bright-blue)"
+version_format = "v${raw}"
+style = "bold bright-yellow"
+detect_extensions = ["py"]
+detect_files = ["requirements.txt", "pyproject.toml", "Pipfile", ".python-version", "setup.py", "manage.py"]
+disabled = false
+
+[ruby]
+format = " [󰴭 $symbol($version)]($style)" # Dùng icon Ruby xịn
+symbol = "ruby "
+version_format = "${raw}"
+style = "bold red"
+detect_extensions = ["rb", "rake"]
+detect_files = ["Gemfile", ".ruby-version"]
+
+[rust]
+format = " [rs](italic) [$symbol$version]($style)"
+symbol = " "
+version_format = "${raw}"
+style = "bold red"
+
+[package]
+format = " [pkg](italic dimmed) [$symbol$version]($style)"
+version_format = "${raw}"
+symbol = "󰏗 "
+style = "dimmed yellow italic bold"
+
+[swift]
+format = " [$symbol($version)]($style) "
+symbol = "󰛥 " # Icon con chim Swift siêu mượt
+style = "bold bright-red"
+
+[aws]
+format = " [$symbol($profile )($region)]($style) "
+symbol = "󰸏 " # Icon AWS chuyên dụng
+
+[c]
+format = " [$symbol($version(-$name))]($style) "
+symbol = " " # Icon C chuẩn chỉ
+style = "bold blue"
+
+[golang]
+format = " [$symbol($version)]($style) "
+symbol = " " # Icon Gopher siêu cưng
+
+[haskell]
+format = " [$symbol($version)]($style) "
+symbol = " " # Lambda của Haskell
+
+[java]
+format = " [$symbol($version)]($style) "
+symbol = " " # Ly cafe Java huyền thoại
+
+[docker_context]
+format = " [$symbol$context]($style) "
+symbol = "󰡨 " # Icon cá voi Docker
+
+[nix_shell]
+style = 'bold blue'
+symbol = '󱄅 ' # Icon NixOS
+format = '[$symbol$state( \($name\))]($style) '
+impure_msg = '[󱄅](bold red)'
+pure_msg = '[󱄅](bold green)'
+unknown_msg = '[󱄅](bold yellow)'
+
+[memory_usage]
+symbol = "󰍛 "
+format = " [$symbol${ram}]($style) " # Chỉ hiện RAM cho gọn, cần gì soi swap suốt ngày nè
+style = "dimmed white"
+
+[dart]
+symbol = " "
+format = " [$symbol($version)]($style) "
+
+[elixir]
+symbol = " "
+format = " [$symbol($version)]($style) "
+
+[elm]
+symbol = " "
+format = " [$symbol($version)]($style) "
+
+[julia]
+symbol = " "
+format = " [$symbol($version)]($style) "
+
+[nim]
+symbol = " "
+format = " [$symbol($version)]($style) "
+
+[conda]
+symbol = " "
+format = " [$symbol$environment]($style) "
+
+[buf]
+symbol = "󰕘 "
+format = " [$symbol$version]($style) "
+
+[spack]
+symbol = "󰐊 "
+format = " [$symbol$environment]($style) "
+
+[php]
+symbol = " "
+format = " [$symbol($version)]($style) "
+style = "bold bright-purple" # Màu tím mộng mơ đặc trưng của PHP nè
+version_format = "${raw}"
+detect_extensions = ["php", "inc"]
+detect_files = ["composer.json", ".php-version"]
