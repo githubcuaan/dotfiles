@@ -116,9 +116,6 @@ zle -N zle-line-init
 #     Global env var
 # ========================
 
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 # for java 
 export JAVA_HOME=/usr/lib/jvm/jdk-25.0.1-oracle-x64
@@ -202,4 +199,6 @@ esac
 
 # zprof
 # zprof
-export PATH=$PATH:$(go env GOPATH)/bin
+
+# node version manager
+eval "$(fnm env --use-on-cd)"
