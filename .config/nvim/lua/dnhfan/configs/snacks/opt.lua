@@ -30,7 +30,7 @@ return {
   quickfile = { enabled = true },
   scope = { enabled = true },
   scroll = { enabled = true },
-  words = { enabled = false },
+  words = { enabled = true },
   notifier = { enabled = true },
   image = { enabled = false },
   dashboard = {
