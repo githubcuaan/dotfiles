@@ -1,0 +1,6 @@
+# This file contains fish universal variable definitions.
+# VERSION: 3.0
+SETUVAR TERMINAL:kitty
+SETUVAR __fish_initialized:4300
+SETUVAR fish_ambiguous_width:1
+SETUVAR fish_user_paths:/home/andev/go/bin\x1e/home/andev/\x2eopencode/bin\x1e/home/andev/\x2epyenv/bin\x1e/home/andev/\x2elocal/bin
