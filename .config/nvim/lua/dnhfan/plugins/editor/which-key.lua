@@ -28,8 +28,6 @@ return {
         {
           "<leader>b",
           group = "buffer",
-          { "<leader>bp", "<cmd>BufferLineCyclePrev<cr>", desc = "Prev Buffer" },
-          { "<leader>bn", "<cmd>BufferLineCycleNext<cr>", desc = "Next Buffer" },
         },
 
         {

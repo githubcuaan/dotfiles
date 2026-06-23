@@ -27,3 +27,12 @@ keymap.set('n', "K", "5k")
 -- scrolling (not move cursor)
 keymap.set("n", "<C-e>", "5<C-e>")
 keymap.set("n", "<C-y>", "5<C-y>")
+
+-- buffer mving
+keymap.set("n", "<Tab>", ":bnext<CR>", {
+  silent = true
+})
+
+keymap.set("n", "<S-Tab>", ":bprevious<CR>", {
+  silent = true
+})
