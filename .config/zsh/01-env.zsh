@@ -7,12 +7,7 @@ export ZSH="$HOME/.oh-my-zsh"
 
 COMPLETION_WAITING_DOTS="true"
 
-# Preferred editor for local and remote sessions
-if [[ -n $SSH_CONNECTION ]]; then
-  export EDITOR='nvim'
-else
-  export EDITOR='vim'
-fi
+export EDITOR='nvim'
 
 # Java
 export JAVA_HOME=/usr/lib/jvm/jdk-25.0.1-oracle-x64
