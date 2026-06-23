@@ -27,11 +27,20 @@ vim.api.nvim_create_autocmd("LspAttach", {
     keymap.set("n", "]d", function() vim.diagnostic.jump({ count = 1, float = true }) end, opts)
 
     opts.desc = "LSP: Hover (Xem docs)"
-    keymap.set("n", "K", function() require("dnhfan.scripts.hover")() end, opts)
+    keymap.set("n", "M", function() require("dnhfan.scripts.hover")() end, opts)
 
     opts.desc = "LSP: Restart"
     keymap.set("n", "<leader>rs", ":LspRestart<CR>", opts)
   end,
 })
 
--- vim.lsp.inlay_hint.enable(true)
+vim.keymap.set("n", "<leader>th", function()
+  if vim.lsp.inlay_hint then
+    vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled({ bufnr = 0 }), { bufnr = 0 })
+  end
+end, { desc = "LSP: Toggle Inlay Hints" })
+
+if vim.lsp.inlay_hint then
+  -- Bật Inlay Hint cho buffer hiện tại khi LSP kết nối thành công
+  vim.lsp.inlay_hint.enable(false, { bufnr = 0 })
+end
