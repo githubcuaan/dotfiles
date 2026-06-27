@@ -8,3 +8,7 @@ source $HOME/.config/zsh/05-functions.zsh
 source $HOME/.config/zsh/06-tools.zsh
 
 # zprof
+
+# Added by GitButler installer
+export PATH="$HOME/.local/bin:$PATH"
+eval "$(but completions zsh)"

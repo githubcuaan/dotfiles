@@ -44,3 +44,7 @@ if status is-interactive
     set -q XDG_CONFIG_HOME && set -l cConf $XDG_CONFIG_HOME/caelestia || set -l cConf $HOME/.config/caelestia
     source $cConf/user-config.fish 2> /dev/null
 end
+
+# Added by GitButler installer
+fish_add_path $HOME/.local/bin
+but completions fish | source
