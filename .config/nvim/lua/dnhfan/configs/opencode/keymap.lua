@@ -3,9 +3,9 @@ vim.keymap.set({ "n", "x" }, "<leader>ca", function() require("opencode").ask("@
   { desc = "Ask OpenCode…" })
 vim.keymap.set({ "n", "x" }, "<leader>cs", function() require("opencode").select() end, { desc = "Select OpenCode…" })
 
-vim.keymap.set({ "n", "x" }, "go", function() return require("opencode").operator("@this ") end,
+vim.keymap.set({ "n", "x" }, "<leader>cg", function() return require("opencode").operator("@this ") end,
   { desc = "Add range to opencode", expr = true })
-vim.keymap.set("n", "goo", function() return require("opencode").operator("@this ") .. "_" end,
+vim.keymap.set("n", "<leader>cG", function() return require("opencode").operator("@this ") .. "_" end,
   { desc = "Add line to opencode", expr = true })
 
 vim.keymap.set("n", "<A-u>", function() require("opencode").command("session.half.page.up") end,
