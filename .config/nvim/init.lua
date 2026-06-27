@@ -6,7 +6,7 @@ require("dnhfan.core").setup({
   syn_sidebar_with_normal = true,
   float_window_brightness = 40,
   line_space = 0,
-  colorscheme = "rose-pine",
+  colorscheme = "everforest",
 })
 
 require("dnhfan.core.dark-mode").setup()
