@@ -25,3 +25,5 @@ vim.g.opencode_opts = {
     end,
   },
 }
+
+require("dnhfan.configs.opencode.status_extmark").setup()
