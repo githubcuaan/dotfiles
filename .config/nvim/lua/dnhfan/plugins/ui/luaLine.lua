@@ -211,12 +211,7 @@ return {
           },
         },
         lualine_z = {
-          -- {
-          --   function () return "" end,
-          --   padding = 0,
-          --   separator = { left = "", right = "█" },
-          --   draw_empty = true,
-          -- },
+          require("opencode").statusline,
         },
       },
       inactive_sections = {

@@ -6,8 +6,11 @@ return {
     "buffer",
     "copilot",
   },
+  per_filetype = {
+    opencode_ask = { "lsp", "buffer" },
+  },
   providers = {
-    lsp = { name = "LSP" },
+    lsp = { name = "LSP", fallbacks = {} },
     snippets = { name = "snippets" },
     path = { name = "path" },
     copilot = {
