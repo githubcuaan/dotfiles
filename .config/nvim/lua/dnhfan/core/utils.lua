@@ -110,13 +110,20 @@ U.sign_icons = {
   changedelete = "󰟃",
   untracked = "󰐗",
 
-  success = "󰄳",
-  info = "󰋼",
-  error = "󰅙",
-  hint = "󰋗",
-  warning = "󰀨",
+  -- success = "󰄳",
+  -- info = "󰋼",
+  -- error = "󰅙",
+  -- hint = "󰋗",
+  -- warning = "󰀨",
   warning_2 = "",
   warning_3 = "󰀨",
+
+
+  info = ' ',
+  warning = ' ',
+  error = ' ',
+  hint = ' ',
+  success = ' ',
 
   -- info = '󰏬',
   -- warning = '󰀧',
