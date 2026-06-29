@@ -1,12 +1,13 @@
 local function get_opencode_port()
   local cwd = vim.fn.getcwd()
-  local hash = vim.fn.system("echo " .. vim.fn.shellescape(cwd) .. " | md5sum | cut -c1-4"):gsub("%s+", "")
+  local hash = vim.fn.system("printf '%s' " .. vim.fn.shellescape(cwd) .. " | md5sum | cut -c1-4"):gsub("%s+", "")
   return tonumber(hash, 16) % 55536 + 10000
 end
 
 local function get_opencode_session()
   local cwd = vim.fn.getcwd()
-  return "opencode-" .. vim.fn.system("echo " .. vim.fn.shellescape(cwd) .. " | md5sum | cut -c1-8"):gsub("%s+", "")
+  return "opencode-" ..
+      vim.fn.system("printf '%s' " .. vim.fn.shellescape(cwd) .. " | md5sum | cut -c1-8"):gsub("%s+", "")
 end
 
 ---@type opencode.Opts
