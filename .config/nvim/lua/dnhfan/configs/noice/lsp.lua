@@ -3,6 +3,10 @@ return {
     enabled = false,
   },
 
+  progress = {
+    enabled = false
+  },
+
   documentation = require("dnhfan.configs.noice.lsp.documentation"),
 
   signature = require("dnhfan.configs.noice.lsp.signature"),
