@@ -145,7 +145,7 @@
   },
   "opencode.nvim": {
     "branch": "main",
-    "commit": "e43a41f7278680b1b362e8e07609803bf9d01684"
+    "commit": "427dd9c64c90dfa05479c52e5d6c9febdf31f83c"
   },
   "plantuml-previewer.vim": {
     "branch": "master",

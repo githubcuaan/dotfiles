@@ -7,7 +7,7 @@ end
 local function get_opencode_session()
   local cwd = vim.fn.getcwd()
   return "opencode-" ..
-      vim.fn.system("printf '%s' " .. vim.fn.shellescape(cwd) .. " | md5sum | cut -c1-8"):gsub("%s+", "")
+      vim.fn.system("printf '%s\\n' " .. vim.fn.shellescape(cwd) .. " | md5sum | cut -c1-8"):gsub("%s+", "")
 end
 
 ---@type opencode.Opts
