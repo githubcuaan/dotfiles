@@ -27,6 +27,7 @@ return {
         blade = { "blade-formatter" },
         dockerfile = {},
         nginx = { "nginxfmt" },
+        toml = { "taplo" },
       },
       format_on_save = {
         lsp_fallback = true,
