@@ -83,6 +83,10 @@
     "branch": "main",
     "commit": "2a6940af80375532e5e9e7c1f2fc6319a1b7a69d"
   },
+  "mini.files": {
+    "branch": "main",
+    "commit": "a5689dae6b732955e33eec225b798d6815063179"
+  },
   "mini.icons": {
     "branch": "main",
     "commit": "e56797f90192d81f1fda02e662fc3e8e3d775027"
