@@ -2,6 +2,19 @@ return {
   'nvim-mini/mini.files',
   version = '*',
   config = function()
+    -- bouder config
+    vim.api.nvim_create_autocmd('User', {
+      pattern = 'MiniFilesWindowOpen',
+      callback = function(args)
+        local win_id = args.data.win_id
+        local config = vim.api.nvim_win_get_config(win_id)
+
+        -- Các giá trị khả dụng: 'single', 'double', 'rounded', 'solid', 'shadow'
+        config.border = 'rounded'
+
+        vim.api.nvim_win_set_config(win_id, config)
+      end,
+    })
     require('mini.files').setup(
       {
         -- Customization of shown content
