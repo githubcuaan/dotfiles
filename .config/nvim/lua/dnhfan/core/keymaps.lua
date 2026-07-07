@@ -20,13 +20,9 @@ keymap.set("n", "<leader>ch", ":nohl<CR>", { desc = "Clear search highlights" })
 keymap.set('n', '+', '<C-a>', { desc = "Increase Sequence" })
 keymap.set('n', '-', '<C-x>', { desc = "Decrease Sequence" })
 
--- moving fast
-keymap.set('n', "J", "5j")
-keymap.set('n', "K", "5k")
-
 -- scrolling (not move cursor)
-keymap.set("n", "<C-e>", "5<C-e>")
-keymap.set("n", "<C-y>", "5<C-y>")
+keymap.set("n", "<S-j>", "2<C-e>", { silent = true })
+keymap.set("n", "<S-k>", "2<C-y>", { silent = true })
 
 -- buffer mving
 keymap.set("n", "<Tab>", ":bnext<CR>", {
