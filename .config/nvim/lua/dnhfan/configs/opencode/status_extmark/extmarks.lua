@@ -43,12 +43,12 @@ function M.place(above_text, below_text, above_hl, below_hl)
     })
   end
 
-  -- Below: virt_text at end of last_line
+  -- Below: virt_lines (virtual line below last_line)
   if below_text and below_hl then
-    local line_len = #vim.api.nvim_buf_get_lines(s.bufnr, s.last_line - 1, s.last_line, false)[1]
-    s.extmarks.below = vim.api.nvim_buf_set_extmark(s.bufnr, state.NS, s.last_line - 1, line_len, {
-      virt_text = { { "  " .. below_text, below_hl } },
-      virt_text_pos = "eol",
+    s.extmarks.below = vim.api.nvim_buf_set_extmark(s.bufnr, state.NS, s.last_line - 1, 0, {
+      virt_lines = {
+        { { "  " .. below_text, below_hl } },
+      },
     })
   end
 end

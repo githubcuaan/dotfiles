@@ -11,9 +11,9 @@ return function()
     mappings = {
       close       = 'q',
       go_in       = 'L',
-      go_in_plus  = 'n',
+      go_in_plus  = 'N',
       go_out      = 'H',
-      go_out_plus = 'p',
+      go_out_plus = 'P',
       mark_goto   = "'",
       mark_set    = 'm',
       reset       = '<BS>',
