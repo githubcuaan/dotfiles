@@ -21,8 +21,8 @@ keymap.set('n', '+', '<C-a>', { desc = "Increase Sequence" })
 keymap.set('n', '-', '<C-x>', { desc = "Decrease Sequence" })
 
 -- scrolling (not move cursor)
-keymap.set("n", "<S-j>", "2<C-e>", { silent = true })
-keymap.set("n", "<S-k>", "2<C-y>", { silent = true })
+keymap.set("n", "<S-j>", "<C-e>", { silent = true })
+keymap.set("n", "<S-k>", "<C-y>", { silent = true })
 
 -- buffer mving
 keymap.set("n", "<Tab>", ":bnext<CR>", {
