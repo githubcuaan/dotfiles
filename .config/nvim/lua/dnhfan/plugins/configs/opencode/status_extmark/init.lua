@@ -1,7 +1,7 @@
 local M = {}
 
-local autocmds = require("dnhfan.configs.opencode.status_extmark.autocmds")
-local hooks = require("dnhfan.configs.opencode.status_extmark.hooks")
+local autocmds = require("dnhfan.plugins.configs.opencode.status_extmark.autocmds")
+local hooks = require("dnhfan.plugins.configs.opencode.status_extmark.hooks")
 
 --- Setup: define highlights, hook prompt API, listen to events.
 function M.setup()

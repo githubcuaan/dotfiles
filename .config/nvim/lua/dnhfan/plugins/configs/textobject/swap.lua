@@ -1,4 +1,4 @@
-local H = require("dnhfan.configs.textobject.helpers")
+local H = require("dnhfan.plugins.configs.textobject.helpers")
 local swap = H.swap
 local map = H.map
 

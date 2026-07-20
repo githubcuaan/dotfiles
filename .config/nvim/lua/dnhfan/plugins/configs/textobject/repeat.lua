@@ -1,4 +1,4 @@
-local H = require("dnhfan.configs.textobject.helpers")
+local H = require("dnhfan.plugins.configs.textobject.helpers")
 local ts_repeat_move = H.ts_repeat_move
 local map = H.map
 

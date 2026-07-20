@@ -4,13 +4,13 @@ return {
   event = "VeryLazy",
   config = function()
     require("fidget").setup({
-      progress = require("dnhfan.configs.figet.progess"),
+      progress = require("dnhfan.plugins.configs.figet.progess"),
 
       -- Options related to notification subsystem
-      notification = require("dnhfan.configs.figet.nofication"),
+      notification = require("dnhfan.plugins.configs.figet.nofication"),
 
       -- Options related to logging
-      logger = require("dnhfan.configs.figet.logger"),
+      logger = require("dnhfan.plugins.configs.figet.logger"),
     })
   end,
 }

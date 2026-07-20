@@ -1,4 +1,4 @@
-local state = require("dnhfan.configs.opencode.status_extmark.state")
+local state = require("dnhfan.plugins.configs.opencode.status_extmark.state")
 
 local M = {}
 

@@ -1,4 +1,4 @@
-local H = require("dnhfan.configs.textobject.helpers")
+local H = require("dnhfan.plugins.configs.textobject.helpers")
 local move = H.move
 local map = H.map
 

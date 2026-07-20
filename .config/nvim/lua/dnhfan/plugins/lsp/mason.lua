@@ -3,7 +3,7 @@ return {
   {
     "williamboman/mason.nvim",
     opts = {
-      ui = require("dnhfan.configs.lsp.ui.mason-ui"),
+      ui = require("dnhfan.plugins.configs.lsp.ui.mason-ui"),
     },
   },
 
@@ -34,7 +34,7 @@ return {
       "WhoIsSethDaniel/mason-tool-installer.nvim"
     },
     config = function()
-      require("dnhfan.configs.lsp.ui.nvim_lspconfig-ui")
+      require("dnhfan.plugins.configs.lsp.ui.nvim_lspconfig-ui")
     end,
   },
 }

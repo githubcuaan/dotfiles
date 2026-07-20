@@ -10,11 +10,11 @@ return {
       -- Force image.nvim to init before pyworks' ensure_dependencies() can override it
       pcall(require, "image")
 
-      require("pyworks").setup(require("dnhfan.configs.pyworks.setup"))
+      require("pyworks").setup(require("dnhfan.plugins.configs.pyworks.setup"))
 
-      require("dnhfan.configs.pyworks.keymap")
+      require("dnhfan.plugins.configs.pyworks.keymap")
 
-      require("dnhfan.configs.pyworks.molten")
+      require("dnhfan.plugins.configs.pyworks.molten")
     end,
   },
 }

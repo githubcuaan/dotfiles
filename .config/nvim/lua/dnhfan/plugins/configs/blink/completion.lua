@@ -13,7 +13,7 @@ return {
       enabled = true,
     },
   },
-  menu = require("dnhfan.configs.blink.completion_menu"),
+  menu = require("dnhfan.plugins.configs.blink.completion_menu"),
 
   documentation = {
     auto_show = true,

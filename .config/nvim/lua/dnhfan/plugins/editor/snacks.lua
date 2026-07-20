@@ -3,9 +3,9 @@ return {
   priority = 1000,
   lazy = false,
   ---@type snacks.Config
-  opts = require("dnhfan.configs.snacks.opt"),
+  opts = require("dnhfan.plugins.configs.snacks.opt"),
 
-  keys = require("dnhfan.configs.snacks.key"),
+  keys = require("dnhfan.plugins.configs.snacks.key"),
 
-  init = require("dnhfan.configs.snacks.init"),
+  init = require("dnhfan.plugins.configs.snacks.init"),
 }

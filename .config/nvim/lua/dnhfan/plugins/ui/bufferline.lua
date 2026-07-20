@@ -3,5 +3,5 @@ return {
   event = "VeryLazy",
   version = "*",
   dependencies = "nvim-tree/nvim-web-devicons",
-  config = require("dnhfan.configs.bufferline.config"),
+  config = require("dnhfan.plugins.configs.bufferline.config"),
 }

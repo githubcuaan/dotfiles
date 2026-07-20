@@ -1,6 +1,6 @@
 return {
   bigfile = { enabled = true },
-  indent = require("dnhfan.configs.snacks.indent"),
+  indent = require("dnhfan.plugins.configs.snacks.indent"),
   input = {
     icon = " ",
     icon_hl = "SnacksInputIcon",

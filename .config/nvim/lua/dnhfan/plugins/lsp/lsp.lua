@@ -9,9 +9,9 @@ return {
   },
   init = function()
     -- Register LspInfo command eagerly so it's available immediately
-    require("dnhfan.configs.lsp.core.nvim-lspconfig-command")
+    require("dnhfan.plugins.configs.lsp.core.nvim-lspconfig-command")
   end,
   config = function()
-    require("dnhfan.configs.lsp.core.nvim-lspconfig-setup")
+    require("dnhfan.plugins.configs.lsp.core.nvim-lspconfig-setup")
   end,
 }

@@ -1,5 +1,5 @@
 return {
   'nvim-mini/mini.files',
   version = '*',
-  config = require('dnhfan.configs.mini-files'),
+  config = require('dnhfan.plugins.configs.mini-files'),
 }

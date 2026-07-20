@@ -7,9 +7,9 @@ return {
     enabled = false
   },
 
-  documentation = require("dnhfan.configs.noice.lsp.documentation"),
+  documentation = require("dnhfan.plugins.configs.noice.lsp.documentation"),
 
-  signature = require("dnhfan.configs.noice.lsp.signature"),
+  signature = require("dnhfan.plugins.configs.noice.lsp.signature"),
 
   message = {
     enabled = true,

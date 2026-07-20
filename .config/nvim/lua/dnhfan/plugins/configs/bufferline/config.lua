@@ -30,8 +30,8 @@ return function()
       -- Hiển thị thông tin LSP (lỗi/cảnh báo) ngay trên tab
       diagnostics = "nvim_lsp",
       diagnostics_update_in_insert = false,
-      diagnostics_indicator = require("dnhfan.configs.bufferline.dianostics_indicator"),
-      offsets = require("dnhfan.configs.bufferline.offsets"),
+      diagnostics_indicator = require("dnhfan.plugins.configs.bufferline.dianostics_indicator"),
+      offsets = require("dnhfan.plugins.configs.bufferline.offsets"),
 
       manage_groups = true,
       clear_panel_notifications = true,
@@ -52,7 +52,7 @@ return function()
       },
 
 
-      custom_filter = require("dnhfan.configs.bufferline.custom_filter"),
+      custom_filter = require("dnhfan.plugins.configs.bufferline.custom_filter"),
     },
   })
 end

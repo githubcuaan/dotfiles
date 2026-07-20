@@ -1,5 +1,5 @@
 return function()
-  require('dnhfan.configs.mini-files.border')()
+  require('dnhfan.plugins.configs.mini-files.border')()
 
   require('mini.files').setup({
     content = {
@@ -37,5 +37,5 @@ return function()
     },
   })
 
-  require('dnhfan.configs.mini-files.keymap')()
+  require('dnhfan.plugins.configs.mini-files.keymap')()
 end

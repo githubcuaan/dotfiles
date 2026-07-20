@@ -4,7 +4,7 @@ return {
   {
     "saghen/blink.cmp",
     event = { "InsertEnter", "CmdlineEnter" },
-    dependencies = require("dnhfan.configs.blink.dependencies.dependencies"),
+    dependencies = require("dnhfan.plugins.configs.blink.dependencies.dependencies"),
     version = "*",
     opts = {
       enabled = function()
@@ -20,21 +20,21 @@ return {
 
         return not vim.tbl_contains(filetypes, vim.bo.filetype)
       end,
-      keymap = require("dnhfan.configs.blink.keymap").cmp,
+      keymap = require("dnhfan.plugins.configs.blink.keymap").cmp,
       appearance = {
         use_nvim_cmp_as_default = true,
         nerd_font_variant = "mono",
       },
 
-      completion = require("dnhfan.configs.blink.completion"),
+      completion = require("dnhfan.plugins.configs.blink.completion"),
 
-      signature = require("dnhfan.configs.blink.signature"),
+      signature = require("dnhfan.plugins.configs.blink.signature"),
 
-      snippets = require("dnhfan.configs.blink.snippets"),
+      snippets = require("dnhfan.plugins.configs.blink.snippets"),
 
-      cmdline = require("dnhfan.configs.blink.cmdline"),
+      cmdline = require("dnhfan.plugins.configs.blink.cmdline"),
 
-      sources = require("dnhfan.configs.blink.sources"),
+      sources = require("dnhfan.plugins.configs.blink.sources"),
 
       fuzzy = { implementation = "prefer_rust_with_warning" },
     },

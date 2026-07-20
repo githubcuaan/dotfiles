@@ -1,6 +1,6 @@
 return {
   enabled = true,
-  keymap = require("dnhfan.configs.blink.keymap").cmdline,
+  keymap = require("dnhfan.plugins.configs.blink.keymap").cmdline,
   sources = function()
     local type = vim.fn.getcmdtype()
     if type == "/" or type == "?" then
