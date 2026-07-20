@@ -1,6 +1,5 @@
 require("dnhfan.core.options")
 require("dnhfan.core.keymaps")
-require("dnhfan.core.keymap-lsp")
 require("dnhfan.core.system-theme").setup()
 
 local M = {}
