@@ -18,3 +18,5 @@ end
 require("dnhfan.core").setup(defaults)
 
 require("dnhfan.lazy")
+
+require("dnhfan.lsp")
