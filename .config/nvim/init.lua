@@ -17,5 +17,4 @@ end
 
 require("dnhfan.core").setup(defaults)
 
-require("dnhfan.core.dark-mode").setup()
 require("dnhfan.lazy")

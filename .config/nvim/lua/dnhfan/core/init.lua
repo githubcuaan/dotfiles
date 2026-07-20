@@ -1,6 +1,7 @@
 require("dnhfan.core.options")
 require("dnhfan.core.keymaps")
 require("dnhfan.core.keymap-lsp")
+require("dnhfan.core.dark-mode").setup()
 
 local M = {}
 
