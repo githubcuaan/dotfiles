@@ -1,7 +1,6 @@
 return {
   -- Top Pickers & Explorer
   { "<leader><space>", function() Snacks.picker.smart() end,                                   desc = "Smart Find Files" },
-  { "<leader>bb",      function() Snacks.picker.buffers() end,                                 desc = "Buffers" },
   { "<leader>/",       function() Snacks.picker.grep() end,                                    desc = "Grep" },
   { "<leader>:",       function() Snacks.picker.command_history() end,                         desc = "Command History" },
   -- { "<leader>e",       function() Snacks.explorer() end,                                       desc = "File Explorer" },
@@ -38,7 +37,6 @@ return {
   { '<leader>s"',      function() Snacks.picker.registers() end,                               desc = "Registers" },
   { '<leader>s/',      function() Snacks.picker.search_history() end,                          desc = "Search History" },
   { "<leader>sa",      function() Snacks.picker.autocmds() end,                                desc = "Autocmds" },
-  { "<leader>sb",      function() Snacks.picker.lines() end,                                   desc = "Buffer Lines" },
   { "<leader>sc",      function() Snacks.picker.command_history() end,                         desc = "Command History" },
   { "<leader>sC",      function() Snacks.picker.commands() end,                                desc = "Commands" },
   { "<leader>sd",      function() Snacks.picker.diagnostics() end,                             desc = "Diagnostics" },
@@ -56,6 +54,7 @@ return {
   { "<leader>sR",      function() Snacks.picker.resume() end,                                  desc = "Resume" },
   { "<leader>su",      function() Snacks.picker.undo() end,                                    desc = "Undo History" },
   { "<leader>uC",      function() Snacks.picker.colorschemes() end,                            desc = "Colorschemes" },
+
   -- LSP
   { "gd",              function() Snacks.picker.lsp_definitions() end,                         desc = "Goto Definition" },
   { "gD",              function() Snacks.picker.lsp_declarations() end,                        desc = "Goto Declaration" },
