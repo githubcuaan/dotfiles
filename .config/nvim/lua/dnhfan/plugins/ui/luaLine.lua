@@ -43,7 +43,7 @@ return {
           },
           {
             function()
-              return "dnhfan"
+              return "NEOVIM"
             end,
             icon = "",
             -- color = function()
