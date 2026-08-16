@@ -14,7 +14,7 @@ return {
   { "<leader>fr",      function() Snacks.picker.recent() end,                                  desc = "Recent" },
 
   -- git
-  { "<leader>gb",      function() Snacks.picker.git_branches() end,                            desc = "Git Branches" },
+  { "<leader>gF",      function() Snacks.picker.git_branches() end,                            desc = "Git Branches" },
   { "<leader>gl",      function() Snacks.picker.git_log() end,                                 desc = "Git Log" },
   { "<leader>gL",      function() Snacks.picker.git_log_line() end,                            desc = "Git Log Line" },
   { "<leader>gs",      function() Snacks.picker.git_status() end,                              desc = "Git Status" },
@@ -75,6 +75,7 @@ return {
   { "<leader>bR",      function() Snacks.rename.rename_file() end,                             desc = "Rename File" },
   { "<leader>gB",      function() Snacks.gitbrowse() end,                                      desc = "Git Browse",                 mode = { "n", "v" } },
   { "<leader>gg",      function() Snacks.lazygit() end,                                        desc = "Lazygit" },
+  { "<leader>gb",      function() require("dnhfan.core.gitbutler").open() end,                 desc = "GitButler TUI" },
   { "<c-/>",           function() Snacks.terminal() end,                                       desc = "Toggle Terminal" },
   { "<c-_>",           function() Snacks.terminal() end,                                       desc = "which_key_ignore" },
   { "]r",              function() Snacks.words.jump(vim.v.count1) end,                         desc = "Next Reference",             mode = { "n", "t" } },
