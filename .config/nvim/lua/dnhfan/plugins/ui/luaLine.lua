@@ -46,13 +46,6 @@ return {
               return "NEOVIM"
             end,
             icon = "",
-            -- color = function()
-            --   local opts = {}
-            --   if vim.g.terminal_color_4 then
-            --     opts.fg = vim.g.terminal_color_4
-            --   end
-            --   return opts
-            -- end,
             color = { fg = "#2E3440", gui = "bold" },
           },
         },
