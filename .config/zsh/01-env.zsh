@@ -45,3 +45,6 @@ esac
 # Local bin
 . "$HOME/.local/share/../bin/env"
 # . "$HOME/.cargo/env"
+
+# Added by GitButler installer
+export PATH="$HOME/.local/bin:$HOME/tools/go/bin:$HOME/tools/flutter/bin:$PATH"
