@@ -28,12 +28,12 @@ vimcmd_replace_symbol = "[󰘳 ](bold bright-yellow)"
 [username]
 style_user = "bold italic bright-yellow"
 style_root = "bold italic red"
-format = "[󰀉 $user]($style) " # Icon User nhìn hiện đại hơn cái vòng tròn
+format = "[󰀉 $user]($style) "            # Icon User nhìn hiện đại hơn cái vòng tròn
 disabled = false
-show_always = false # Chỉ hiện khi SSH hoặc dùng sudo, quá gọn!
+show_always = false                      # Chỉ hiện khi SSH hoặc dùng sudo, quá gọn!
 
 [sudo]
-symbol = "󰌆 " # Icon cái chìa khóa/khóa nhìn phát biết quyền Root luôn
+symbol = "󰌆 "                # Icon cái chìa khóa/khóa nhìn phát biết quyền Root luôn
 style = "bold bright-purple"
 format = "[$symbol]($style)"
 disabled = false
@@ -44,10 +44,10 @@ style = 'green italic'
 
 
 [directory]
-home_symbol = "  " 
+home_symbol = "  "
 read_only = " 󰌾"
 style = "bold cyan"
-truncation_length = 3 
+truncation_length = 3
 truncation_symbol = "…/"
 format = "[$path]($style)[$read_only]($style) "
 # Phần này dành cho mấy ông thần làm việc trong Git repo nè
@@ -62,15 +62,15 @@ format = "[$symbol$int]($style)"
 disabled = false
 
 [cmd_duration]
-min_time = 2_000  # Chỉ hiện khi lệnh chạy trên 2 giây, đỡ bị rác mắt
+min_time = 2_000                  # Chỉ hiện khi lệnh chạy trên 2 giây, đỡ bị rác mắt
 format = "[󱎫 $duration ]($style)"
-style = "italic dimmed yellow" # Màu vàng mờ nhìn rất nghệ và không bị chói
+style = "italic dimmed yellow"    # Màu vàng mờ nhìn rất nghệ và không bị chói
 
 [jobs]
-symbol = "󱖏 " # Icon này nhìn giống các tác vụ đang chạy ngầm hơn
+symbol = "󱖏 "                        # Icon này nhìn giống các tác vụ đang chạy ngầm hơn
 style = "bold bright-blue"
 format = "[$symbol$number]($style) "
-number_threshold = 1 # Chỉ hiện khi có từ 1 job trở lên
+number_threshold = 1                 # Chỉ hiện khi có từ 1 job trở lên
 
 [localip]
 ssh_only = true
@@ -94,7 +94,7 @@ format = "[$symbol$percentage]($style) "
 
 [[battery.display]]
 threshold = 20
-style = "bold red" # Pin yếu là phải đỏ chót để còn biết đường cắm sạc
+style = "bold red"     # Pin yếu là phải đỏ chót để còn biết đường cắm sạc
 charging_symbol = "󰢟 "
 
 [[battery.display]]
@@ -108,10 +108,10 @@ style = "bright-green" # Pin đầy hoặc còn nhiều thì xanh mướt cho y�
 charging_symbol = "󰂄 "
 
 [git_branch]
-symbol = " " # Dùng icon này nhìn hiện đại hơn nè
+symbol = " "                         # Dùng icon này nhìn hiện đại hơn nè
 style = "bold bright-blue"
 format = "[$symbol$branch ]($style) " # Bỏ bớt remote cho đỡ rối, khi nào cần mới hiện
-truncation_length = 8 # Ngắn gọn là chân á
+truncation_length = 20
 ignore_branches = ["main", "master"]
 
 [git_status]
@@ -161,11 +161,18 @@ symbol = "[ ](bold bright-blue)"
 version_format = "v${raw}"
 style = "bold bright-yellow"
 detect_extensions = ["py"]
-detect_files = ["requirements.txt", "pyproject.toml", "Pipfile", ".python-version", "setup.py", "manage.py"]
+detect_files = [
+  "requirements.txt",
+  "pyproject.toml",
+  "Pipfile",
+  ".python-version",
+  "setup.py",
+  "manage.py",
+]
 disabled = false
 
 [ruby]
-format = " [󰴭 $symbol($version)]($style)" # Dùng icon Ruby xịn
+format = " [󰴭 $symbol($version)]($style)"   # Dùng icon Ruby xịn
 symbol = "ruby "
 version_format = "${raw}"
 style = "bold red"
@@ -186,37 +193,37 @@ style = "dimmed yellow italic bold"
 
 [swift]
 format = " [$symbol($version)]($style) "
-symbol = "󰛥 " # Icon con chim Swift siêu mượt
+symbol = "󰛥 "                            # Icon con chim Swift siêu mượt
 style = "bold bright-red"
 
 [aws]
 format = " [$symbol($profile )($region)]($style) "
-symbol = "󰸏 " # Icon AWS chuyên dụng
+symbol = "󰸏 "                                      # Icon AWS chuyên dụng
 
 [c]
 format = " [$symbol($version(-$name))]($style) "
-symbol = " " # Icon C chuẩn chỉ
+symbol = " "                                    # Icon C chuẩn chỉ
 style = "bold blue"
 
 [golang]
 format = " [$symbol($version)]($style) "
-symbol = " " # Icon Gopher siêu cưng
+symbol = " "                            # Icon Gopher siêu cưng
 
 [haskell]
 format = " [$symbol($version)]($style) "
-symbol = " " # Lambda của Haskell
+symbol = " "                            # Lambda của Haskell
 
 [java]
 format = " [$symbol($version)]($style) "
-symbol = " " # Ly cafe Java huyền thoại
+symbol = " "                            # Ly cafe Java huyền thoại
 
 [docker_context]
 format = " [$symbol$context]($style) "
-symbol = "󰡨 " # Icon cá voi Docker
+symbol = "󰡨 "                          # Icon cá voi Docker
 
 [nix_shell]
 style = 'bold blue'
-symbol = '󱄅 ' # Icon NixOS
+symbol = '󱄅 '                                   # Icon NixOS
 format = '[$symbol$state( \($name\))]($style) '
 impure_msg = '[󱄅](bold red)'
 pure_msg = '[󱄅](bold green)'
@@ -262,7 +269,7 @@ format = " [$symbol$environment]($style) "
 [php]
 symbol = " "
 format = " [$symbol($version)]($style) "
-style = "bold bright-purple" # Màu tím mộng mơ đặc trưng của PHP nè
+style = "bold bright-purple"                     # Màu tím mộng mơ đặc trưng của PHP nè
 version_format = "${raw}"
 detect_extensions = ["php", "inc"]
 detect_files = ["composer.json", ".php-version"]
