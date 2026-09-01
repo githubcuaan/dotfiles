@@ -14,10 +14,13 @@ vim.opt.rtp:prepend(lazypath)
 require("lazy").setup({
   { import = "dnhfan.plugins.colorschemes" },
   { import = "dnhfan.plugins.ai" },
-  { import = "dnhfan.plugins.editor" },
-  { import = "dnhfan.plugins.ui" },
   { import = "dnhfan.plugins.lsp" },
-  { import = "dnhfan.plugins.datascience" },
+  { import = "dnhfan.plugins.completion" },
+  { import = "dnhfan.plugins.language" },
+  { import = "dnhfan.plugins.editor" },
+  { import = "dnhfan.plugins.navigation" },
+  { import = "dnhfan.plugins.git" },
+  { import = "dnhfan.plugins.ui" },
   { import = "dnhfan.plugins.tools" },
 }, {
   checker = {
