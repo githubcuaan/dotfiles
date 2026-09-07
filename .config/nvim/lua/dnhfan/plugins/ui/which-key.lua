@@ -10,7 +10,7 @@ return {
       {
         mode = { "n", "x" },
         { "<leader>c", group = "code" },
-        -- { "<leader>d",     group = "debug" },
+        { "<leader>d", group = "debug" },
         { "<leader>f", group = "file/find" },
         { "<leader>g", group = "git" },
         { "<leader>gh", group = "hunks" },

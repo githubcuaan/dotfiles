@@ -2,7 +2,7 @@ return {
   bigfile = { enabled = true },
   indent = require("dnhfan.plugins.configs.snacks.indent"),
   input = {
-    icon = " ",
+    icon = " ",
     icon_hl = "SnacksInputIcon",
     icon_pos = "left",
     prompt_pos = "title",
@@ -26,6 +26,12 @@ return {
   },
   explorer = {
     enabled = false,
+  },
+  dap = {
+    enabled = true,
+    controls = {
+      enabled = true,
+    },
   },
   quickfile = { enabled = true },
   scope = { enabled = true },
