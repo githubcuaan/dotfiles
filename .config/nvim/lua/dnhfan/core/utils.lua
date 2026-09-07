@@ -297,6 +297,7 @@ U.lsp_servers = {
   "clangd",       -- c/c++
   "yamlls",       -- yaml
   "vtsls",
+  "jdtls",        -- java
 }
 
 --NOTE: lsp formatters
