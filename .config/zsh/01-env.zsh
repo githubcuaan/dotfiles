@@ -13,6 +13,10 @@ export EDITOR='nvim'
 export JAVA_HOME=/usr/lib/jvm/jdk-25.0.1-oracle-x64
 export PATH=$PATH:$JAVA_HOME/bin
 
+# Android
+export ANDROID_HOME=$HOME/Android/Sdk
+export PATH=$PATH:$ANDROID_HOME/platform-tools:$ANDROID_HOME/cmdline-tools/latest/bin
+
 # pipx
 export PATH="$PATH:$HOME/.local/bin"
 
@@ -48,3 +52,6 @@ esac
 
 # Added by GitButler installer
 export PATH="$HOME/.local/bin:$HOME/tools/go/bin:$HOME/tools/flutter/bin:$PATH"
+
+# flutter web
+export CHROME_EXECUTABLE=/usr/bin/microsoft-edge-dev
