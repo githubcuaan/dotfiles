@@ -347,6 +347,7 @@ U.treesitter_parsers = {
   "cpp",
   "php",
   "nginx",
+  "dart",
 }
 
 U.spinner_frames = { "⣾", "⣽", "⣻", "⢿", "⡿", "⣟", "⣯", "⣷" }
