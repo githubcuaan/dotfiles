@@ -10,12 +10,6 @@ return {
 
   -- Dart Analysis Server (managed by flutter-tools, NOT mason-lspconfig)
   lsp = {
-    color = {
-      enabled = true,
-      background = false,
-      virtual_text = false,
-      underline = true,
-    },
     settings = {
       showTodos = true,
       completeFunctionCalls = true,
