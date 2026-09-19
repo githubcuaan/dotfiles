@@ -8,3 +8,7 @@ source $HOME/.config/zsh/05-functions.zsh
 source $HOME/.config/zsh/06-tools.zsh
 
 # zprof
+
+
+# Added by Antigravity CLI installer
+export PATH="/home/andev/.local/bin:$PATH"

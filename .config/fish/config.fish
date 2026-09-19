@@ -48,3 +48,7 @@ end
 # Added by GitButler installer
 fish_add_path $HOME/.local/bin
 but completions fish | source
+
+
+# Added by Antigravity CLI installer
+set -gx PATH "/home/andev/.local/bin" $PATH
