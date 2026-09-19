@@ -10,6 +10,7 @@ return {
   -- mason-lspconfig.nvim: Tích hợp Mason với nvim-lspconfig để tự động cài đặt LSP servers
   {
     "williamboman/mason-lspconfig.nvim",
+    event = "VeryLazy",
     dependencies = { "williamboman/mason.nvim" },
     opts = {
       ensure_installed = require("dnhfan.core.utils").lsp_servers,
@@ -19,6 +20,8 @@ return {
   -- mason-tool-installer.nvim: Tự động cài đặt các công cụ như linters và formatters
   {
     "WhoIsSethDaniel/mason-tool-installer.nvim",
+    event = "VeryLazy",
+    cmd = { "MasonToolsInstall", "MasonToolsUpdate" },
     dependencies = { "williamboman/mason.nvim" },
     opts = {
       ensure_installed = require("dnhfan.core.utils").lsp_formatters,

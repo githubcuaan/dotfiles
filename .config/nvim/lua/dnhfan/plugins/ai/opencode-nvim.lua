@@ -1,6 +1,7 @@
 return {
   "nickjvandyke/opencode.nvim",
   version = "*", -- Latest stable release
+  event = "VeryLazy",
   dependencies = {
     require("dnhfan.plugins.configs.opencode.snack_ui")
   },
