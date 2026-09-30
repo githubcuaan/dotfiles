@@ -203,12 +203,6 @@ return {
             end
           },
         },
-        lualine_z = {
-          function(...)
-            if not package.loaded["opencode"] then return "" end
-            return require("opencode").statusline(...)
-          end,
-        },
       },
       inactive_sections = {
         lualine_a = {},
