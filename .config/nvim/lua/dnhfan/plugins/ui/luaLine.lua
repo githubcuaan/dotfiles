@@ -203,6 +203,12 @@ return {
             end
           },
         },
+        lualine_z = {
+          {
+            require('opvi.lualine').component,
+            color = function() return require('opvi.lualine').color() end,
+          }
+        },
       },
       inactive_sections = {
         lualine_a = {},

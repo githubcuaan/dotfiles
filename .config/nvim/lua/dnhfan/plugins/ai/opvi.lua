@@ -13,6 +13,12 @@ return {
     tmux = {
       manager_path = "/home/andev/projects/tmux-opencode-session-manager",
     },
+    lualine = {
+      fg = '#585858', -- xám mặc định, dùng chung mọi trạng thái
+      max_width = 20, -- 0 = không cắt
+      connected = '󰚩',
+      idle = '󱚧',
+    },
   },
   keys = {
     {
