@@ -11,7 +11,7 @@ return {
   -- Dart Analysis Server (managed by flutter-tools, NOT mason-lspconfig)
   lsp = {
     settings = {
-      showTodos = true,
+      showTodos = false,
       completeFunctionCalls = true,
       analysisExcludedFolders = {
         vim.fn.expand("$HOME/.pub-cache"),
