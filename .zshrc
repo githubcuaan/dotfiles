@@ -12,3 +12,4 @@ source $HOME/.config/zsh/06-tools.zsh
 
 # Added by Antigravity CLI installer
 export PATH="/home/andev/.local/bin:$PATH"
+export PATH="$HOME/.pub-cache/bin:$PATH"
