@@ -8,7 +8,7 @@ return vim.b.colorscheme ~= "catppuccin" and {}
       priority = 1000,
       config = function()
         require("catppuccin").setup({
-          flavour = "mocha", -- latte, frappe, macchiato, mocha
+          flavour = "auto", -- follow vim.o.background set by system-theme
           background = {     -- :h background
             light = "latte",
             dark = "mocha",
